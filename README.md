@@ -22,13 +22,13 @@ Insights and recommendations are provided across the following business dimensio
 
 # Project Resources & Links
 
-The Python notebook for Data Cleaning [here](https://github.com/ajoalenjeen/E-commerce-Funnel-Analysis-Checkout-A-B-Test/blob/0e74941fcf39395b0c9bce1c54c14a13ab4dc45e/Code/Data_Cleaning.ipynb)
+The Python notebook for Data Cleaning [here](https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/30926ce5c1fdf52386fbd1d034f3017f78fbc327/Notebook/Data_Cleaning.ipynb)
 
-The Python notebook for Funnel Analysis [here](https://github.com/ajoalenjeen/E-commerce-Funnel-Analysis-Checkout-A-B-Test/blob/1c5d0ba8d5e43d149fc3f183358bc4f29e24cde7/Code/Funnel_Analysis.ipynb)
+The Python notebook for Funnel Analysis [here](https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/30926ce5c1fdf52386fbd1d034f3017f78fbc327/Notebook/Funnel_Analysis.ipynb)
 
-The Python notebook for Opportunity Sizing [here](https://github.com/ajoalenjeen/E-commerce-Funnel-Analysis-Checkout-A-B-Test/blob/1c5d0ba8d5e43d149fc3f183358bc4f29e24cde7/Code/Sizing.ipynb)
+The Python notebook for Opportunity Sizing [here](https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/30926ce5c1fdf52386fbd1d034f3017f78fbc327/Notebook/Sizing.ipynb)
 
-The Python notebook for A/B Test Analysis [here](https://github.com/ajoalenjeen/E-commerce-Funnel-Analysis-Checkout-A-B-Test/blob/1c5d0ba8d5e43d149fc3f183358bc4f29e24cde7/Code/ab_testing.ipynb)
+The Python notebook for A/B Test Analysis [here](https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/30926ce5c1fdf52386fbd1d034f3017f78fbc327/Notebook/ab_testing.ipynb)
 
 
 ## Data Structure:
