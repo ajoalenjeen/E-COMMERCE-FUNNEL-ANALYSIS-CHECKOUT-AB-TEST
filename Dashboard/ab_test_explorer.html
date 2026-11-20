@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>checkout_v2 Test Results</title>
+<meta name="description" content="Interactive dashboard: e-commerce funnel analysis and checkout A/B test on 3M+ events.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:wght@400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: #fbfbfa; --color-panel: #ffffff; --color-fg: #1d1d1b; --color-fg-muted: #6b6a65;
+  --color-border-line: #e6e4de; --color-ok: #1f7a4d; --color-warn: #b7791f; --color-bad: #c0392b;
+  --series-1: #2f6fdb; --series-2: #e08a2e;
+  --cds-chart-muted: #b9b7b0; --cds-chart-status-critical: #d64545; --cds-chart-grid: #eeece6;
+  --cds-chart-axis: #c9c7c0; --cds-chart-reference: #8a8880; --cds-text-secondary: #6b6a65;
+  --cds-surface-popover: #ffffff; --cds-border: #e0ded8; --cds-shadow-popover: 0 6px 20px rgba(0,0,0,.12);
+  --font-anthropic-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-anthropic-serif: "Source Serif 4", Georgia, serif;
+  --cds-font-size-caption: 12.5px; --cds-font-size-body: 15px; --cds-font-size-heading: 19px; --cds-font-size-title: 30px;
+  --cds-font-weight-medium: 600;
+  --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 14px; --cds-gap-lg: 22px; --cds-gap-xl: 32px;
+  --cds-pad-sm: 6px; --cds-pad-md: 10px; --cds-pad-lg: 18px; --cds-radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #161615; --color-panel: #1f1f1d; --color-fg: #ecebe6; --color-fg-muted: #a3a19a;
+    --color-border-line: #33322f; --color-ok: #4cc38a; --color-warn: #e0a84a; --color-bad: #ef6b5b;
+    --series-1: #5b93f0; --series-2: #f0a35b;
+    --cds-chart-muted: #5c5b56; --cds-chart-status-critical: #ef5a5a; --cds-chart-grid: #2b2a28;
+    --cds-chart-axis: #4a4945; --cds-chart-reference: #a3a19a; --cds-text-secondary: #a3a19a;
+    --cds-surface-popover: #262624; --cds-border: #3a3936; --cds-shadow-popover: 0 6px 20px rgba(0,0,0,.5);
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-anthropic-sans); font-size: var(--cds-font-size-body); }
+#dash-root { max-width: 1180px; margin: 0 auto; padding: 28px max(16px, env(safe-area-inset-left, 0px)) 48px; }
+.dash-select { font: inherit; font-size: var(--cds-font-size-body); padding: 6px 30px 6px 10px; border: 1px solid var(--color-border-line); border-radius: 8px; background-color: var(--color-panel); color: var(--color-fg); }
+.dash-skeleton { color: transparent !important; background: var(--color-border-line); border-radius: 4px; }
+.nl-footer { margin-top: 28px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.nl-footer a { color: inherit; }
+
+
+.nl { display: flex; flex-direction: column; gap: var(--cds-gap-lg); font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+.nl-head { display: flex; flex-direction: column; gap: var(--cds-gap-sm); max-width: 62rem; }
+.nl-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+.nl-lede { font-size: var(--cds-font-size-heading); line-height: 1.45; margin: 0; max-width: 60rem; }
+.nl-meta { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: 0; }
+.nl-tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--color-border-line); }
+.nl-tab { appearance: none; background: none; border: 0; border-bottom: 2px solid transparent; color: var(--color-fg-muted); font: inherit; font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); padding: 8px 12px; margin-bottom: -1px; cursor: pointer; }
+.nl-tab:hover { color: var(--color-fg); }
+.nl-tab[aria-selected="true"] { color: var(--color-fg); border-bottom-color: currentColor; }
+.nl-tab:focus-visible, .nl-pill:focus-visible, .nl-reset:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+.nl-sec { display: flex; flex-direction: column; gap: var(--cds-gap-lg); }
+.nl-sec h3 { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.nl-note { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: 0; max-width: 60rem; line-height: 1.45; }
+.nl-bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--cds-gap-sm); }
+.nl-pill { appearance: none; font: inherit; font-size: var(--cds-font-size-caption); padding: 4px 12px; border-radius: 999px; border: 1px solid var(--color-border-line); background: var(--color-panel); color: var(--color-fg); cursor: pointer; }
+.nl-pill:hover { border-color: var(--color-fg-muted); }
+.nl-pill.nl-on { background: var(--color-fg); color: var(--color-bg); border-color: var(--color-fg); }
+.nl-reset { appearance: none; font: inherit; font-size: var(--cds-font-size-caption); background: none; border: 0; color: var(--color-fg-muted); text-decoration: underline; cursor: pointer; padding: 4px; }
+.nl-range { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.nl-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); gap: var(--cds-gap-md); }
+.nl-tile { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-xs); min-width: 0; }
+.nl-tile-label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); text-transform: uppercase; letter-spacing: .04em; }
+.nl-tile-value { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.nl-tile-sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.nl-good { color: var(--color-ok); } .nl-bad { color: var(--color-bad); } .nl-flat { color: var(--color-fg-muted); }
+.nl-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-width: 0; }
+.nl-grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: var(--cds-gap-md); }
+.nl-chart { position: relative; min-height: 260px; width: 100%; }
+.nl-chart.nl-short { min-height: 180px; }
+.nl-chart svg { display: block; overflow: visible; }
+.nl-chart .tick text, .nl-chart .nl-axis-label { fill: var(--cds-text-secondary); font-size: var(--cds-font-size-caption); font-family: var(--font-anthropic-sans); }
+.nl-chart .domain, .nl-chart .tick line { stroke: var(--cds-chart-axis); }
+.nl-chart .nl-gridline line { stroke: var(--cds-chart-grid); }
+.nl-chart .nl-gridline .domain { display: none; }
+.nl-chart .nl-val { fill: var(--color-fg); font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; font-family: var(--font-anthropic-sans); }
+.nl-chart .nl-event line { stroke: var(--cds-chart-reference); stroke-dasharray: 3 3; }
+.nl-chart .nl-event text { fill: var(--cds-text-secondary); font-size: var(--cds-font-size-caption); font-family: var(--font-anthropic-sans); }
+.nl-chart .selection { fill: var(--color-fg); fill-opacity: .06; stroke: var(--color-fg-muted); }
+.nl-chart .nl-hit { cursor: pointer; }
+.nl-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: var(--cds-pad-sm) var(--cds-pad-md); font-size: var(--cds-font-size-caption); line-height: 1.45; white-space: nowrap; z-index: 2; font-variant-numeric: tabular-nums; }
+.nl-tip b { font-weight: var(--cds-font-weight-medium); }
+.nl-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.nl-key { display: inline-flex; align-items: center; gap: 6px; }
+.nl-sw { width: 10px; height: 10px; border-radius: 2px; display: inline-block; background: var(--cds-chart-muted); }
+.nl-sw-line { width: 14px; height: 2px; border-radius: 0; }
+.nl-sw-ref { width: 14px; height: 0; border-top: 2px dashed var(--cds-chart-reference); background: none; border-radius: 0; }
+.nl-tablewrap { overflow-x: auto; }
+.nl-table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.nl-table th, .nl-table td { padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+.nl-table th:first-child, .nl-table td:first-child { text-align: left; }
+.nl-table th { color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); }
+.nl-table tbody tr { cursor: pointer; }
+.nl-table tbody tr:hover td:not(.nl-lag1):not(.nl-lag2) { background: color-mix(in srgb, var(--color-fg) 4%, transparent); }
+.nl-table tbody tr.nl-picked td:first-child { box-shadow: inset 3px 0 0 var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+.nl-table td.nl-lag1 { background: color-mix(in srgb, var(--color-warn) 18%, transparent); }
+.nl-table td.nl-lag2 { background: color-mix(in srgb, var(--color-bad) 22%, transparent); font-weight: var(--cds-font-weight-medium); }
+.nl-chip { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); }
+.nl-chip-win { background: color-mix(in srgb, var(--color-ok) 18%, transparent); color: var(--color-ok); }
+.nl-chip-worse { background: color-mix(in srgb, var(--color-bad) 18%, transparent); color: var(--color-bad); }
+.nl-chip-flat { background: color-mix(in srgb, var(--color-fg-muted) 16%, transparent); color: var(--color-fg-muted); }
+.nl-detail { display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); gap: var(--cds-gap-md); }
+.nl-detail-item { display: flex; flex-direction: column; gap: 2px; }
+.nl-detail-big { font-family: var(--font-anthropic-serif); font-size: var(--cds-font-size-heading); font-variant-numeric: tabular-nums; }
+.nl-rec { border-left: 3px solid var(--color-warn); }
+.nl-rec ol { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 4px; line-height: 1.45; }
+.nl-rec p { margin: 0; line-height: 1.45; }
+.nl details { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.5; }
+.nl details dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: var(--cds-gap-sm) 0 0; }
+.nl details dt { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+.nl details dd { margin: 0; }
+.nl-verdict { border-left: 4px solid var(--color-warn); gap: var(--cds-gap-md); }
+.nl-eyebrow { font-size: var(--cds-font-size-caption); text-transform: uppercase; letter-spacing: .06em; color: var(--color-warn); font-weight: var(--cds-font-weight-medium); }
+.nl-verdict-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; line-height: 1.2; text-wrap: balance; }
+.nl-verdict p { margin: 0; line-height: 1.5; max-width: 60rem; }
+.nl-chips { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); }
+.nl-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: var(--cds-gap-md); }
+.nl-step { display: flex; flex-direction: column; gap: 6px; padding: var(--cds-pad-md); border-top: 2px solid var(--color-border-line); min-width: 0; }
+.nl-step-n { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); text-transform: uppercase; letter-spacing: .04em; }
+.nl-step-big { font-family: var(--font-anthropic-serif); font-size: var(--cds-font-size-heading); font-variant-numeric: tabular-nums; line-height: 1.2; }
+.nl-step p { margin: 0; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.45; }
+.nl-plan td, .nl-plan th { white-space: normal; text-align: left; vertical-align: top; }
+.nl-plan td:first-child { font-weight: var(--cds-font-weight-medium); white-space: nowrap; }
+.nl-plan tbody tr { cursor: default; }
+.nl-plan tbody tr:hover td { background: none; }
+.nl-owner { color: var(--color-fg-muted); white-space: nowrap; }
+.nl-chart .nl-flow { fill: var(--cds-text-secondary); font-size: var(--cds-font-size-caption); font-family: var(--font-anthropic-sans); font-variant-numeric: tabular-nums; }
+.nl-chart .nl-flow.nl-alert { fill: var(--color-bad); font-weight: 600; }
+.nl-chart .nl-steplabel { fill: var(--color-fg); font-size: var(--cds-font-size-caption); font-family: var(--font-anthropic-sans); }
+[data-dash-source-state=refreshing] { opacity: .5; }
+@media (max-width: 520px) { .nl details dl { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div id="dash-root">
+<div class="nl">
+  <header class="nl-head">
+    <h1 class="nl-title">checkout_v2 A/B Test Results</h1>
+    <p class="nl-meta">Northline e-commerce (synthetic data) · one-page checkout with a free-shipping progress bar vs. the current checkout · Nov 3 – Dec 21, 2025 · 50/50 split by user · click a segment to see its readout</p>
+  </header>
+  <section class="nl-sec">
+<div class="nl-tiles">
+      <div class="nl-tile"><span class="nl-tile-label">Conversion lift</span><span class="nl-tile-value nl-good dash-skeleton" data-draw="num" data-source="ab_segments" data-field="lift_pts" data-where="segment=All%20exposed%20users" data-fmt="pts1">—</span><span class="nl-tile-sub">95% CI <span data-draw="num" data-source="ab_segments" data-field="ci_low_pts" data-where="segment=All%20exposed%20users" data-fmt="signed1">—</span> to <span data-draw="num" data-source="ab_segments" data-field="ci_high_pts" data-where="segment=All%20exposed%20users" data-fmt="signed1">—</span> pts</span><span><span class="nl-chip nl-chip-win">Win</span></span></div>
+      <div class="nl-tile"><span class="nl-tile-label">Average order value</span><span class="nl-tile-value nl-bad dash-skeleton" data-draw="num" data-source="ab_guardrails" data-field="pct_change" data-where="metric=Average%20order%20value" data-fmt="pctchg">—</span><span class="nl-tile-sub"><span data-draw="num" data-source="ab_guardrails" data-field="control" data-where="metric=Average%20order%20value" data-fmt="usd2">—</span> → <span data-draw="num" data-source="ab_guardrails" data-field="treatment" data-where="metric=Average%20order%20value" data-fmt="usd2">—</span></span><span><span class="nl-chip nl-chip-worse">Worse</span></span></div>
+      <div class="nl-tile"><span class="nl-tile-label">Revenue per exposed user</span><span class="nl-tile-value nl-flat dash-skeleton" data-draw="num" data-source="ab_guardrails" data-field="pct_change" data-where="metric=Revenue%20per%20exposed%20user" data-fmt="pctchg">—</span><span class="nl-tile-sub">p = <span data-draw="num" data-source="ab_guardrails" data-field="p_value" data-where="metric=Revenue%20per%20exposed%20user" data-fmt="p2">—</span>, not significant</span><span><span class="nl-chip nl-chip-flat">Flat</span></span></div>
+      <div class="nl-tile"><span class="nl-tile-label">Apple Pay error rate</span><span class="nl-tile-value nl-bad dash-skeleton" data-draw="num" data-source="ab_payments" data-field="ratio" data-where="payment_type=apple_pay" data-fmt="ratio">—</span><span class="nl-tile-sub"><span data-draw="num" data-source="ab_payments" data-field="control_error_rate" data-where="payment_type=apple_pay" data-fmt="pct1">—</span> → <span data-draw="num" data-source="ab_payments" data-field="treatment_error_rate" data-where="payment_type=apple_pay" data-fmt="pct1">—</span></span><span><span class="nl-chip nl-chip-worse">Worse</span></span></div>
+    </div>
+<div class="nl-grid2">
+      <div class="nl-card" id="lift-by-segment">
+        <h3>Conversion lift by segment, with 95% intervals</h3>
+        <p class="nl-note">Intervals that cross zero show no clear effect. Click a segment for its full readout.</p>
+        <div class="nl-chart" data-draw="forest" data-source="ab_segments"></div>
+      </div>
+      <div class="nl-card" id="segment-readout">
+        <h3 data-draw="abtitle">—</h3>
+        <div class="nl-legend"><span class="nl-key"><span class="nl-sw"></span>Current checkout</span><span class="nl-key"><span class="nl-sw" data-swatch="0"></span>checkout_v2</span></div>
+        <div class="nl-chart nl-short" data-draw="abdetail" data-source="ab_segments"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>window.NL_DATA = {"daily": "session_date,sessions,purchases,conversion,gross_revenue\n2025-10-01,1880,35,0.018617021276595744,5732.79\n2025-10-02,2003,42,0.020968547179231155,6161.39\n2025-10-03,1976,35,0.01771255060728745,6550.96\n2025-10-04,2236,47,0.02101967799642218,7519.4800000000005\n2025-10-05,2282,73,0.031989482909728306,9663.44\n2025-10-06,2128,52,0.02443609022556391,6789.5599999999995\n2025-10-07,2248,66,0.029359430604982206,9141.91\n2025-10-08,2162,45,0.020814061054579093,6619.77\n2025-10-09,2210,52,0.023529411764705882,8254.97\n2025-10-10,2417,55,0.022755482002482418,9438.6\n2025-10-11,2655,68,0.025612052730696798,10461.87\n2025-10-12,2632,53,0.02013677811550152,9306.35\n2025-10-13,2917,99,0.03393897840246829,12155.26\n2025-10-14,2480,62,0.025,8683.18\n2025-10-15,2390,60,0.02510460251046025,8939.59\n2025-10-16,2441,52,0.021302744776730848,8199.11\n2025-10-17,2427,73,0.030078285949732178,9225.03\n2025-10-18,2774,82,0.029560201874549386,11970.84\n2025-10-19,2837,80,0.028198801550934086,13812.88\n2025-10-20,2532,65,0.025671406003159557,8658.38\n2025-10-21,2543,62,0.02438065277231616,8652.85\n2025-10-22,2532,69,0.027251184834123223,9806.99\n2025-10-23,3796,120,0.03161222339304531,13370.55\n2025-10-24,3750,130,0.034666666666666665,14439.51\n2025-10-25,4405,158,0.0358683314415437,21498.43\n2025-10-26,4448,141,0.03169964028776978,16005.3\n2025-10-27,2734,79,0.028895391367959034,11946.45\n2025-10-28,2687,80,0.0297729810197246,11337.58\n2025-10-29,2826,76,0.02689313517338995,11471.19\n2025-10-30,2711,82,0.030247141276281815,11789.07\n2025-10-31,2304,66,0.028645833333333332,7687.98\n2025-11-01,3055,78,0.02553191489361702,11048.72\n2025-11-02,3135,93,0.02966507177033493,13881.91\n2025-11-03,2798,92,0.032880629020729094,13157.33\n2025-11-04,2882,81,0.028105482303955587,9561.31\n2025-11-05,2934,101,0.03442399454669393,14673.56\n2025-11-06,2944,87,0.029551630434782608,10018.84\n2025-11-07,2876,78,0.027121001390820583,11542.3\n2025-11-08,3501,94,0.0268494715795487,13297.25\n2025-11-09,3395,98,0.0288659793814433,11212.66\n2025-11-10,3169,68,0.02145787314610287,8423.14\n2025-11-11,3499,108,0.03086596170334381,13582.09\n2025-11-12,3146,93,0.029561347743165926,14724.61\n2025-11-13,3256,75,0.023034398034398034,9615.32\n2025-11-14,3308,97,0.029322853688029022,14615.58\n2025-11-15,3790,109,0.028759894459102903,12549.93\n2025-11-16,3833,123,0.03208974693451604,14579.67\n2025-11-17,3462,108,0.03119584055459272,17241.56\n2025-11-18,3455,111,0.032127351664254705,15264.83\n2025-11-19,3438,89,0.025887143688190808,10208.31\n2025-11-20,3524,102,0.02894438138479001,14210.14\n2025-11-21,4311,151,0.03502667594525632,16254.56\n2025-11-22,4366,152,0.03481447549244159,16946.61\n2025-11-23,4628,143,0.03089887640449438,16808.88\n2025-11-24,4679,151,0.032271852960034195,19934.46\n2025-11-25,4978,171,0.03435114503816794,21603.48\n2025-11-26,5063,176,0.03476199881493186,19384.99\n2025-11-27,6735,286,0.04246473645137342,30912.86\n2025-11-28,10295,534,0.05186983972802331,55928.52\n2025-11-29,7419,322,0.043402075751448985,33971.04\n2025-11-30,6953,294,0.04228390622752769,31770.59\n2025-12-01,12184,670,0.05499015101772817,70458.78\n2025-12-02,5749,233,0.040528787615237434,27256.58\n2025-12-03,6000,223,0.03716666666666667,27784.7\n2025-12-04,5955,209,0.03509655751469354,26209.92\n2025-12-05,5927,239,0.04032394128564198,26150.65\n2025-12-06,5637,210,0.03725385843533795,28934.170000000002\n2025-12-07,5712,214,0.03746498599439776,27054.9\n2025-12-08,6960,273,0.039224137931034485,37841.65\n2025-12-09,5255,176,0.03349191246431969,23255.39\n2025-12-10,5279,212,0.040159121045652585,30288.2\n2025-12-11,5294,234,0.04420098224404987,32800.0\n2025-12-12,5426,220,0.040545521562845556,29290.32\n2025-12-13,5776,214,0.037049861495844875,26596.38\n2025-12-14,7339,291,0.03965117863469138,35625.27\n2025-12-15,6401,282,0.04405561630995157,34630.65\n2025-12-16,6448,244,0.03784119106699752,39522.67\n2025-12-17,6630,264,0.039819004524886875,31550.24\n2025-12-18,6818,279,0.04092109122909944,36959.7\n2025-12-19,4763,178,0.0373714045769473,28296.05\n2025-12-20,4709,141,0.029942662985771928,20334.76\n2025-12-21,4808,157,0.032653910149750415,20382.42\n2025-12-22,4816,164,0.0340531561461794,20820.26\n2025-12-23,4873,146,0.029961009644982557,19118.42\n2025-12-24,2769,68,0.024557602022390754,11019.1\n2025-12-25,1852,34,0.0183585313174946,4888.91\n2025-12-26,7701,339,0.044020257109466304,31631.82\n2025-12-27,4986,173,0.03469715202567188,18722.56\n2025-12-28,5284,195,0.03690386071158214,22436.98\n2025-12-29,5239,187,0.03569383470127887,19829.98\n2025-12-30,5345,174,0.03255378858746492,20075.84\n2025-12-31,3567,134,0.03756658256237735,14378.5\n", "step_rates": "segment_type,segment,sessions,view_to_cart,cart_to_checkout,checkout_to_shipping,shipping_to_payment,payment_to_purchase,session_conversion\nAll,All sessions,382692,0.12487314670428949,0.5397092831185992,0.8182987039703765,0.8893218528062347,0.94,0.034756409854399886\nDevice,desktop,119060,0.14655378010970666,0.5324111743965283,0.888631090487239,0.8810378590078329,0.9385071309501759,0.042558373929111375\nDevice,mobile,236881,0.11305703832543633,0.5440023577954612,0.7744286485513766,0.8956663181131637,0.940329485017512,0.030601863382880012\nDevice,tablet,26751,0.13297777777777778,0.5432263814616756,0.8200836820083682,0.8860544217687075,0.9452975047984645,0.036821053418563794\nChannel,(not set),7458,0.11341284787612471,0.522140221402214,0.8106508875739645,0.9124087591240876,0.924,0.030973451327433628\nChannel,affiliate,24402,0.14046228092456184,0.5497287522603979,0.8224233983286908,0.903471634208298,0.9390815370196813,0.041062208015736415\nChannel,direct,58126,0.14888217522658612,0.5595238095238095,0.8284629981024668,0.8868529546495648,0.9390495867768595,0.03127688125795685\nChannel,email,36288,0.18976417461113898,0.5830248545742993,0.8274352426121854,0.8871252204585538,0.9438369781312127,0.05233134920634921\nChannel,organic_search,125217,0.1183367854677047,0.5318378432753245,0.8159529257927427,0.890625,0.9394961763382816,0.03335809035514347\nChannel,paid_search,83501,0.12878488026914703,0.5441157638622103,0.8173930589184827,0.8857072327820291,0.9406354515050167,0.0404186776206273\nChannel,social,47700,0.07043901237608521,0.44973776223776224,0.7885245901639344,0.8846153846153846,0.9388954171562868,0.016750524109014675\nVisitor,new,240000,0.10825192132343363,0.5162144275314361,0.8075757575757576,0.88483186607014,0.9406295873430109,0.024029166666666667\nVisitor,returning,142692,0.15359079963090497,0.568320023444941,0.8267673048600883,0.8927855711422845,0.9395186432223469,0.052799035685252155\nMembership,loyalty member,99091,0.14261932964113072,0.5601571268237935,0.8466547289597917,0.887137089021342,0.9367143476376246,0.04361647374635436\nMembership,non-member,283601,0.11871151323833448,0.5311797752808989,0.8052026163446357,0.8903828197945844,0.9415897651006712,0.03166067820635329\nPeriod,1 Baseline (Oct 1\u2013Nov 20),147763,0.1080409011983108,0.5245039682539683,0.8115965834428384,0.8909127706941915,0.9413902771467515,0.028044909754133308\nPeriod,2 Early Black Friday,28025,0.1279270259747483,0.5273913043478261,0.8180515759312321,0.8879159369527145,0.9309664694280079,0.03368421052631579\nPeriod,3 Thanksgiving\u2013Cyber Monday,43586,0.16072574320952449,0.561321800842759,0.8346693386773547,0.8907563025210085,0.9460916442048517,0.04831826733354747\nPeriod,4 December gifting,102606,0.13504739044805514,0.5446052181838897,0.8303051079876586,0.8860445912469034,0.9359273066169618,0.03914975732413309\nPeriod,5 After shipping cutoff,23969,0.1172381525299111,0.5507411630558723,0.7712146422628952,0.8996763754045307,0.9424460431654677,0.0327923567941925\nPeriod,6 Christmas,4621,0.089377793056033,0.49615384615384617,0.7531645569620253,0.8823529411764706,0.9714285714285714,0.02207314434105172\nPeriod,7 After-Christmas sale,32122,0.12813535843269183,0.5525096525096526,0.8120767494356659,0.8874218207088256,0.9412685982772122,0.03741983687192578\n", "shipping": "member,device,cart_size,checkouts,reached_shipping\nloyalty member (free shipping),desktop,$49+,1769,1602\nloyalty member (free shipping),desktop,under $49,408,362\nloyalty member (free shipping),mobile,$49+,2552,2074\nloyalty member (free shipping),mobile,under $49,966,785\nloyalty member (free shipping),tablet,$49+,332,276\nloyalty member (free shipping),tablet,under $49,116,102\nnon-member,desktop,$49+,3762,3364\nnon-member,desktop,under $49,957,800\nnon-member,mobile,$49+,5616,4496\nnon-member,mobile,under $49,1980,1252\nnon-member,tablet,$49+,735,619\nnon-member,tablet,under $49,251,179\n", "sizing": "scenario,benchmark_pass_rate,gap_pts,extra_orders,gross_revenue,net_revenue,pct_of_q4_gross,scenario_short\nConservative: mobile loyalty members (no fee),0.8126776577600909,3.824900920871432,358.02790647352435,41489.13269376376,34247.72657547396,2.474950560428076,Conservative\nBase: half the gap to desktop,0.8315298695193079,5.710122096793125,534.4930763741924,61938.33991325123,51127.78195545743,3.694806787400681,Base\nOptimistic: desktop parity,0.888631090487239,11.420244193586235,1068.9861527483838,123876.67982650235,102255.56391091476,7.389613574801354,Optimistic\n", "ab_segments": "segment,n_control,n_treatment,control,treatment,lift_pts,ci_low_pts,ci_high_pts,relative_lift,p_value\nAll exposed users,6154,6095,0.7027949301267469,0.7407711238720263,3.7976193745279385,2.2120188830878833,5.383219865967994,0.05403595290368779,2.7443497192986826e-06\ndevice: mobile,3531,3457,0.6689323137921269,0.721724038183396,5.279172439126912,3.1248566071493786,7.433488271104443,0.07891938138254506,1.6468906907532287e-06\ndevice: desktop,2196,2162,0.7522768670309654,0.776595744680851,2.4318877649885606,-0.08656377099785749,4.950339300974979,0.03232703106486001,0.058585358750908936\ndevice: tablet,427,476,0.7283372365339579,0.7163865546218487,-1.195068191210913,-7.042923624347999,4.652787241926173,-0.01640817098543601,0.6889981975742459\nloyalty member,1867,1914,0.7316550615961436,0.7622779519331243,3.0622890336980735,0.2916083522350354,5.832969715161111,0.04185427251767426,0.030312704186529548\nnon-member,4287,4181,0.6902262654536973,0.7309256158813681,4.0699350427670815,2.140442797994491,5.999427287539671,0.05896522990315134,3.661068248105832e-05\n", "ab_weekly": "segment,n_control,n_treatment,control,treatment,lift_pts,ci_low_pts,ci_high_pts,relative_lift,p_value,week\nweek 1,421,439,0.7387173396674585,0.7790432801822323,4.032594051477389,-1.683557320085607,9.748745423040386,0.0545891349090668,0.1667204328482319,1\nweek 2,491,460,0.725050916496945,0.7043478260869566,-2.070309040998841,-7.813747046703864,3.673128964706181,-0.0285539814362481,0.4796812091950984,2\nweek 3,581,592,0.693631669535284,0.7533783783783784,5.974670884309441,0.8651733144260043,11.084168454192875,0.0861360740392997,0.0221284587685085,3\nweek 4,1303,1287,0.7099002302379125,0.7692307692307693,5.933053899285678,2.561111231853023,9.304996566718335,0.0835758835758837,0.0005835051696118,4\nweek 5,1320,1288,0.7037878787878787,0.7422360248447205,3.844814605684177,0.4136240656696349,7.276005145698719,0.0546303044079989,0.0283035096349486,5\nweek 6,1035,1029,0.6975845410628019,0.7482993197278912,5.071477866508934,1.2164437819708738,8.926511951046992,0.0727005483633898,0.0100571137120712,6\nweek 7,1003,1000,0.6769690927218345,0.687,1.003090727816558,-3.075607305579252,5.081788761212367,0.0148173784977909,0.6298145769081527,7\n", "ab_payments": "payment_type,control_error_rate,treatment_error_rate,ratio,p_value,n_control,n_treatment\napple_pay,0.025677603423680456,0.051560379918588875,2.0079903512739334,0.011215333488107774,701,737\npaypal,0.023809523809523808,0.02932551319648094,1.2316715542521997,0.44519928067086767,966,1023\ncredit_card,0.02846715328467153,0.031490552834149754,1.106206599558594,0.5074769051798973,2740,2858\nstore_card,0.03324808184143223,0.03201970443349754,0.9630541871921182,0.9222590796216165,391,406\n", "ab_guardrails": "metric,control,treatment,difference,pct_change,ci_low,ci_high,p_value\nAverage order value,128.40285780346824,121.62002436323367,-6.782833440234569,-0.052824629889595465,-11.294395677542422,-2.139436273372632,3.8692034206476696e-05\nRevenue per exposed user,93.58487650308741,94.25931091058244,0.6744344074950277,0.007206660228619155,-3.3554817223329754,4.719033114772508,0.7432506420386843\n", "funnel": "segment_type,segment,step,sessions\nAll,All sessions,1 Sessions,382692\nAll,All sessions,2 Viewed product,242406\nAll,All sessions,3 Added to cart,30270\nAll,All sessions,4 Began checkout,19444\nAll,All sessions,5 Entered shipping,15911\nAll,All sessions,6 Entered payment,14150\nAll,All sessions,7 Purchased,13301\nDevice,desktop,1 Sessions,119060\nDevice,mobile,1 Sessions,236881\nDevice,tablet,1 Sessions,26751\nDevice,desktop,2 Viewed product,75474\nDevice,mobile,2 Viewed product,150057\nDevice,tablet,2 Viewed product,16875\nDevice,desktop,3 Added to cart,11061\nDevice,mobile,3 Added to cart,16965\nDevice,tablet,3 Added to cart,2244\nDevice,desktop,4 Began checkout,6896\nDevice,mobile,4 Began checkout,11114\nDevice,tablet,4 Began checkout,1434\nDevice,desktop,5 Entered shipping,6128\nDevice,mobile,5 Entered shipping,8607\nDevice,tablet,5 Entered shipping,1176\nDevice,desktop,6 Entered payment,5399\nDevice,mobile,6 Entered payment,7709\nDevice,tablet,6 Entered payment,1042\nDevice,desktop,7 Purchased,5067\nDevice,mobile,7 Purchased,7249\nDevice,tablet,7 Purchased,985\nChannel,(not set),1 Sessions,7458\nChannel,affiliate,1 Sessions,24402\nChannel,direct,1 Sessions,58126\nChannel,email,1 Sessions,36288\nChannel,organic_search,1 Sessions,125217\nChannel,paid_search,1 Sessions,83501\nChannel,social,1 Sessions,47700\nChannel,(not set),2 Viewed product,4779\nChannel,affiliate,2 Viewed product,15748\nChannel,direct,2 Viewed product,24825\nChannel,email,2 Viewed product,19930\nChannel,organic_search,2 Viewed product,84006\nChannel,paid_search,2 Viewed product,60636\nChannel,social,2 Viewed product,32482\nChannel,(not set),3 Added to cart,542\nChannel,affiliate,3 Added to cart,2212\nChannel,direct,3 Added to cart,3696\nChannel,email,3 Added to cart,3782\nChannel,organic_search,3 Added to cart,9941\nChannel,paid_search,3 Added to cart,7809\nChannel,social,3 Added to cart,2288\nChannel,(not set),4 Began checkout,338\nChannel,affiliate,4 Began checkout,1436\nChannel,direct,4 Began checkout,2635\nChannel,email,4 Began checkout,2741\nChannel,organic_search,4 Began checkout,6118\nChannel,paid_search,4 Began checkout,4956\nChannel,social,4 Began checkout,1220\nChannel,(not set),5 Entered shipping,274\nChannel,affiliate,5 Entered shipping,1181\nChannel,direct,5 Entered shipping,2183\nChannel,email,5 Entered shipping,2268\nChannel,organic_search,5 Entered shipping,4992\nChannel,paid_search,5 Entered shipping,4051\nChannel,social,5 Entered shipping,962\nChannel,(not set),6 Entered payment,250\nChannel,affiliate,6 Entered payment,1067\nChannel,direct,6 Entered payment,1936\nChannel,email,6 Entered payment,2012\nChannel,organic_search,6 Entered payment,4446\nChannel,paid_search,6 Entered payment,3588\nChannel,social,6 Entered payment,851\nChannel,(not set),7 Purchased,231\nChannel,affiliate,7 Purchased,1002\nChannel,direct,7 Purchased,1818\nChannel,email,7 Purchased,1899\nChannel,organic_search,7 Purchased,4177\nChannel,paid_search,7 Purchased,3375\nChannel,social,7 Purchased,799\nVisitor,new,1 Sessions,240000\nVisitor,returning,1 Sessions,142692\nVisitor,new,2 Viewed product,153540\nVisitor,returning,2 Viewed product,88866\nVisitor,new,3 Added to cart,16621\nVisitor,returning,3 Added to cart,13649\nVisitor,new,4 Began checkout,8580\nVisitor,returning,4 Began checkout,10864\nVisitor,new,5 Entered shipping,6929\nVisitor,returning,5 Entered shipping,8982\nVisitor,new,6 Entered payment,6131\nVisitor,returning,6 Entered payment,8019\nVisitor,new,7 Purchased,5767\nVisitor,returning,7 Purchased,7534\nMembership,loyalty member,1 Sessions,99091\nMembership,non-member,1 Sessions,283601\nMembership,loyalty member,2 Viewed product,62474\nMembership,non-member,2 Viewed product,179932\nMembership,loyalty member,3 Added to cart,8910\nMembership,non-member,3 Added to cart,21360\nMembership,loyalty member,4 Began checkout,6143\nMembership,non-member,4 Began checkout,13301\nMembership,loyalty member,5 Entered shipping,5201\nMembership,non-member,5 Entered shipping,10710\nMembership,loyalty member,6 Entered payment,4614\nMembership,non-member,6 Entered payment,9536\nMembership,loyalty member,7 Purchased,4322\nMembership,non-member,7 Purchased,8979\nPeriod,1 Baseline (Oct 1\u2013Nov 20),1 Sessions,147763\nPeriod,2 Early Black Friday,1 Sessions,28025\nPeriod,3 Thanksgiving\u2013Cyber Monday,1 Sessions,43586\nPeriod,4 December gifting,1 Sessions,102606\nPeriod,5 After shipping cutoff,1 Sessions,23969\nPeriod,6 Christmas,1 Sessions,4621\nPeriod,7 After-Christmas sale,1 Sessions,32122\nPeriod,1 Baseline (Oct 1\u2013Nov 20),2 Viewed product,93298\nPeriod,2 Early Black Friday,2 Viewed product,17979\nPeriod,3 Thanksgiving\u2013Cyber Monday,2 Viewed product,28054\nPeriod,4 December gifting,2 Viewed product,64992\nPeriod,5 After shipping cutoff,2 Viewed product,14961\nPeriod,6 Christmas,2 Viewed product,2909\nPeriod,7 After-Christmas sale,2 Viewed product,20213\nPeriod,1 Baseline (Oct 1\u2013Nov 20),3 Added to cart,10080\nPeriod,2 Early Black Friday,3 Added to cart,2300\nPeriod,3 Thanksgiving\u2013Cyber Monday,3 Added to cart,4509\nPeriod,4 December gifting,3 Added to cart,8777\nPeriod,5 After shipping cutoff,3 Added to cart,1754\nPeriod,6 Christmas,3 Added to cart,260\nPeriod,7 After-Christmas sale,3 Added to cart,2590\nPeriod,1 Baseline (Oct 1\u2013Nov 20),4 Began checkout,6088\nPeriod,2 Early Black Friday,4 Began checkout,1396\nPeriod,3 Thanksgiving\u2013Cyber Monday,4 Began checkout,2994\nPeriod,4 December gifting,4 Began checkout,5834\nPeriod,5 After shipping cutoff,4 Began checkout,1202\nPeriod,6 Christmas,4 Began checkout,158\nPeriod,7 After-Christmas sale,4 Began checkout,1772\nPeriod,1 Baseline (Oct 1\u2013Nov 20),5 Entered shipping,4941\nPeriod,2 Early Black Friday,5 Entered shipping,1142\nPeriod,3 Thanksgiving\u2013Cyber Monday,5 Entered shipping,2499\nPeriod,4 December gifting,5 Entered shipping,4844\nPeriod,5 After shipping cutoff,5 Entered shipping,927\nPeriod,6 Christmas,5 Entered shipping,119\nPeriod,7 After-Christmas sale,5 Entered shipping,1439\nPeriod,1 Baseline (Oct 1\u2013Nov 20),6 Entered payment,4402\nPeriod,2 Early Black Friday,6 Entered payment,1014\nPeriod,3 Thanksgiving\u2013Cyber Monday,6 Entered payment,2226\nPeriod,4 December gifting,6 Entered payment,4292\nPeriod,5 After shipping cutoff,6 Entered payment,834\nPeriod,6 Christmas,6 Entered payment,105\nPeriod,7 After-Christmas sale,6 Entered payment,1277\nPeriod,1 Baseline (Oct 1\u2013Nov 20),7 Purchased,4144\nPeriod,2 Early Black Friday,7 Purchased,944\nPeriod,3 Thanksgiving\u2013Cyber Monday,7 Purchased,2106\nPeriod,4 December gifting,7 Purchased,4017\nPeriod,5 After shipping cutoff,7 Purchased,786\nPeriod,6 Christmas,7 Purchased,102\nPeriod,7 After-Christmas sale,7 Purchased,1202\n"}; window.NL_DEFAULTS = {"start": "2025-10-01", "end": "2025-12-31", "segtype": "Device", "fseg": "", "abseg": "device: mobile", "fdev": "All sessions"};</script>
+<script>
+window.dash = (() => {
+  const RAW = window.NL_DATA, DEFAULTS = window.NL_DEFAULTS;
+  const sets = {};
+  for (const k in RAW) { const rows = d3.csvParse(RAW[k]); sets[k] = { status: "ok", data: rows, columns: rows.columns, refreshing: false, truncated: false }; }
+  const calcs = {}, draws = [], listeners = [];
+  let params = { ...DEFAULTS };
+  const data = (id) => {
+    if (sets[id]) return sets[id];
+    if (calcs[id]) { const c = calcs[id]; return { status: "ok", data: c.fn(...c.inputs.map((i) => data(i).data)) }; }
+    return { status: "missing", data: [] };
+  };
+  const runOne = (name, fn) => document.querySelectorAll(`[data-draw="${name}"]`).forEach((el) => {
+    if (el.closest("[hidden]")) return;
+    try { fn(el); } catch (e) { console.error(name, e); }
+  });
+  const runAll = () => { listeners.forEach((f) => f()); draws.forEach(([n, f]) => runOne(n, f)); };
+  let pending = false;
+  const schedule = () => { if (pending) return; pending = true; requestAnimationFrame(() => { pending = false; runAll(); }); };
+  let lastW = 0;
+  window.addEventListener("resize", () => { if (window.innerWidth < 120) return; if (window.innerWidth !== lastW) { lastW = window.innerWidth; schedule(); } });
+  return {
+    data, colors: ["var(--series-1)", "var(--series-2)"],
+    calc: (id, spec) => { calcs[id] = spec; },
+    draw: (name, fn) => { if (fn) draws.push([name, fn]); else draws.filter(([n]) => n === name).forEach(([n, f]) => runOne(n, f)); },
+    onData: (fn) => { listeners.push(fn); },
+    params: () => params,
+    setParams: (o) => { params = { ...params, ...o }; schedule(); },
+    resetParams: () => { params = { ...DEFAULTS }; schedule(); },
+    setLink: (id) => { try { history.replaceState(null, "", "#" + id); } catch (e) {} schedule(); },
+    refresh: () => {}, loader: () => {},
+    _start: () => { lastW = window.innerWidth; runAll(); },
+  };
+})();
+</script>
+<script>
+// ---------- shared helpers ----------
+window.NL = (() => {
+  const fmt = {
+    int: d3.format(",.0f"),
+    usd0: (v) => "$" + d3.format(",.0f")(v),
+    usd2: (v) => "$" + d3.format(",.2f")(v),
+    usdK: (v) => "$" + d3.format(",.0f")(v / 1000) + "K",
+    pct1: d3.format(".1%"),
+    pct2: d3.format(".2%"),
+    pct0: d3.format(".0%"),
+    per100: (v) => d3.format(".1f")(v * 100),
+    usdKs: (v) => (Math.abs(v) < 500 ? "$0" : (v < 0 ? "−" : "+") + "$" + d3.format(",.0f")(Math.abs(v) / 1000) + "K"),
+    pctchg: d3.format("+.1%"),
+    pts1: (v) => d3.format("+.1f")(v) + " pts",
+    signed1: d3.format("+.1f"),
+    ratio: (v) => d3.format(".1f")(v) + "x",
+    p2: (v) => (v < 0.001 ? "<0.001" : d3.format(".3f")(v)),
+  };
+  const parseWhere = (w) => (w || "").split("&").filter(Boolean).map((kv) => kv.split("=").map(decodeURIComponent));
+  const rowFor = (rows, el) => {
+    if (el.dataset.row != null) return rows[+el.dataset.row];
+    const conds = parseWhere(el.dataset.where);
+    return rows.find((r) => conds.every(([k, v]) => String(r[k]) === v));
+  };
+  const color = (i) => (dash.colors && dash.colors[i]) || "currentColor";
+  const muted = "var(--cds-chart-muted)";
+  const parseDay = d3.utcParse("%Y-%m-%d");
+  const fmtDay = d3.utcFormat("%Y-%m-%d");
+  function measure(svg, strings) {
+    const g = svg.append("g").attr("class", "tick").attr("opacity", 0);
+    let w = 0;
+    strings.forEach((s) => { const t = g.append("text").text(s); w = Math.max(w, t.node().getComputedTextLength()); });
+    g.remove();
+    return Math.ceil(w);
+  }
+  function tip(el) {
+    const t = document.createElement("div");
+    t.className = "nl-tip"; t.hidden = true; el.appendChild(t);
+    return {
+      show(lines, x, y) {
+        t.replaceChildren();
+        lines.forEach(([b, rest]) => { const line = document.createElement("div"); const bb = document.createElement("b"); bb.textContent = b; line.appendChild(bb); if (rest) line.append(" " + rest); t.appendChild(line); });
+        t.hidden = false;
+        const W = el.clientWidth, tw = t.offsetWidth;
+        t.style.left = Math.max(0, Math.min(W - tw, x + 12)) + "px";
+        t.style.top = Math.max(0, y - t.offsetHeight - 8) + "px";
+      },
+      hide() { t.hidden = true; },
+    };
+  }
+  function placeholder(el, st) {
+    el.replaceChildren();
+    if (st === "error") { const p = document.createElement("p"); p.className = "nl-note"; p.textContent = "Failed to load"; el.appendChild(p); }
+  }
+  const num = (rows, cols) => rows.map((r) => { const o = { ...r }; cols.forEach((c) => (o[c] = +r[c])); return o; });
+  const params = () => dash.params() || {};
+  const range = () => { const p = params(); return [p.start || "2025-10-01", p.end || "2025-12-31"]; };
+  return { fmt, rowFor, color, muted, measure, tip, placeholder, num, parseDay, fmtDay, params, range };
+})();
+
+// ---------- calculations ----------
+dash.calc("totals", {
+  title: "Totals for the selected dates",
+  description: "Sums the daily rows between the chosen start and end dates. Conversion is orders ÷ sessions; AOV is revenue ÷ orders.",
+  inputs: ["daily"],
+  fn: (daily) => {
+    const p = dash.params() || {};
+    const start = p.start || "2025-10-01", end = p.end || "2025-12-31";
+    const rows = daily.filter((r) => r.session_date >= start && r.session_date <= end);
+    const sessions = d3.sum(rows, (r) => +r.sessions);
+    const orders = d3.sum(rows, (r) => +r.purchases);
+    const revenue = d3.sum(rows, (r) => +r.gross_revenue);
+    const days = rows.length || 1;
+    return [{ start, end, days: rows.length, sessions, orders, gross_revenue: revenue,
+              conversion: sessions ? orders / sessions : 0, aov: orders ? revenue / orders : 0,
+              sessions_per_day: sessions / days, orders_per_day: orders / days }];
+  },
+});
+dash.calc("q4", {
+  title: "Q4 totals",
+  description: "Sums every daily row, Oct 1 – Dec 31, 2025.",
+  inputs: ["daily"],
+  fn: (daily) => {
+    const sessions = d3.sum(daily, (r) => +r.sessions), orders = d3.sum(daily, (r) => +r.purchases);
+    return [{ sessions, orders, gross_revenue: d3.sum(daily, (r) => +r.gross_revenue), conversion: sessions ? orders / sessions : 0 }];
+  },
+});
+dash.calc("decision_options", {
+  title: "Revenue impact of each option, 7-week window",
+  description: "Revenue change per checkout user × all users who reached checkout during the 7-week test. 'As tested' uses the measured revenue-per-user difference and its bootstrap 95% CI. 'v2.1 after fixes' is an estimate: current revenue per user × v2's relative conversion lift (range from the conversion CI), assuming order value recovers to the current checkout's level.",
+  inputs: ["ab_guardrails", "ab_segments"],
+  fn: (guardrails, segments) => {
+    const g = guardrails.find((r) => r.metric === "Revenue per exposed user");
+    const a = segments.find((r) => r.segment === "All exposed users");
+    if (!g || !a) return [];
+    const users = +a.n_control + +a.n_treatment, rpu = +g.control, base = +a.control;
+    const perUser = (pts) => rpu * (pts / 100) / base;
+    return [
+      { option: "Keep current checkout", per_user: 0, low: 0, high: 0, users, total: 0, total_low: 0, total_high: 0 },
+      { option: "Ship v2 as tested", per_user: +g.difference, low: +g.ci_low, high: +g.ci_high, users,
+        total: +g.difference * users, total_low: +g.ci_low * users, total_high: +g.ci_high * users },
+      { option: "Ship v2.1 after fixes (estimate)", per_user: perUser(+a.lift_pts), low: perUser(+a.ci_low_pts), high: perUser(+a.ci_high_pts), users,
+        total: perUser(+a.lift_pts) * users, total_low: perUser(+a.ci_low_pts) * users, total_high: perUser(+a.ci_high_pts) * users },
+    ];
+  },
+});
+dash.calc("ship_rates", {
+  title: "Shipping-step pass rate by membership, device and cart size",
+  description: "Checkouts that reached shipping ÷ all checkouts, per group.",
+  inputs: ["shipping"],
+  fn: (shipping) => shipping.map((r) => ({ member: r.member, device: r.device, cart_size: r.cart_size,
+    checkouts: +r.checkouts, pass_rate: +r.reached_shipping / +r.checkouts })),
+});
+dash.calc("ship_by_device", {
+  title: "Shipping-step pass rate by device",
+  description: "All checkouts per device, members and non-members, all cart sizes.",
+  inputs: ["shipping"],
+  fn: (shipping) => d3.rollups(shipping, (v) => ({ checkouts: d3.sum(v, (r) => +r.checkouts), reached: d3.sum(v, (r) => +r.reached_shipping) }), (r) => r.device)
+    .map(([device, s]) => ({ device, checkouts: s.checkouts, pass_rate: s.reached / s.checkouts })),
+});
+
+// ---------- page wiring (listeners and state only) ----------
+document.querySelectorAll("[data-swatch]").forEach((s) => { s.style.background = NL.color(+s.dataset.swatch); });
+
+function nlShowTab(id) {
+  document.querySelectorAll(".nl-tab").forEach((b) => { const on = b.dataset.tab === id; b.setAttribute("aria-selected", on ? "true" : "false"); b.tabIndex = on ? 0 : -1; });
+  document.querySelectorAll(".nl-sec[role=tabpanel]").forEach((s) => { s.hidden = s.id !== id; });
+}
+document.querySelectorAll(".nl-tab").forEach((b) => {
+  b.addEventListener("click", () => { nlShowTab(b.dataset.tab); dash.setLink(b.dataset.tab); });
+  b.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const tabs = [...document.querySelectorAll(".nl-tab")]; const i = tabs.indexOf(b);
+    const next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+    next.focus(); next.click();
+  });
+});
+{
+  const h = (location.hash || "").slice(1);
+  if (["decision", "overview", "funnel", "abtest"].includes(h)) nlShowTab(h);
+}
+
+document.querySelectorAll("#period-filter .nl-pill").forEach((b) => {
+  b.addEventListener("click", () => dash.setParams({ start: b.dataset.start, end: b.dataset.end }));
+});
+document.querySelectorAll(".nl-fdev .nl-pill").forEach((b) => {
+  b.addEventListener("click", () => dash.setParams({ fdev: b.dataset.fdev }));
+});
+document.querySelectorAll("#reset-range").forEach((b) => b.addEventListener("click", () => dash.setParams({ start: "2025-10-01", end: "2025-12-31" })));
+document.querySelectorAll("#nl-segtype").forEach((sel) => {
+  sel.addEventListener("change", () => dash.setParams({ segtype: sel.value, fseg: "" }));
+});
+dash.onData(() => {
+  const p = NL.params();
+  const [s, e] = NL.range();
+  document.querySelectorAll("#period-filter .nl-pill").forEach((b) => {
+    const on = b.dataset.start === s && b.dataset.end === e;
+    b.classList.toggle("nl-on", on); b.setAttribute("aria-pressed", on ? "true" : "false");
+  });
+  document.querySelectorAll(".nl-fdev .nl-pill").forEach((b) => {
+    const on = b.dataset.fdev === (p.fdev || "All sessions");
+    b.classList.toggle("nl-on", on); b.setAttribute("aria-pressed", on ? "true" : "false");
+  });
+  document.querySelectorAll("#reset-range").forEach((b) => { b.hidden = s === "2025-10-01" && e === "2025-12-31"; });
+  document.querySelectorAll("#nl-segtype").forEach((sel) => { if (document.activeElement !== sel) sel.value = p.segtype || "Device"; });
+});
+
+// ---------- inline numbers ----------
+dash.draw("num", (el) => {
+  const d = dash.data(el.dataset.source);
+  if (d.status !== "loading") el.classList.remove("dash-skeleton");
+  if (d.status !== "ok") { el.textContent = "—"; return; }
+  const rows = Array.isArray(d.data) ? d.data : [];
+  const r = NL.rowFor(rows, el);
+  const v = r ? +r[el.dataset.field] : NaN;
+  el.textContent = Number.isFinite(v) ? NL.fmt[el.dataset.fmt](v) : "—";
+});
+dash.draw("rangelabel", (el) => {
+  const [s, e] = NL.range();
+  const f = d3.utcFormat("%b %-d");
+  const days = d3.utcDay.count(NL.parseDay(s), NL.parseDay(e)) + 1;
+  el.textContent = `${f(NL.parseDay(s))} – ${f(NL.parseDay(e))}, 2025 · ${days} days`;
+});
+
+// ---------- funnel: segment table ----------
+const NL_COLS = ["view_to_cart", "cart_to_checkout", "checkout_to_shipping", "shipping_to_payment", "payment_to_purchase"];
+const NL_COL_LABEL = { view_to_cart: "View → cart", cart_to_checkout: "Cart → checkout", checkout_to_shipping: "Checkout → shipping", shipping_to_payment: "Shipping → payment", payment_to_purchase: "Payment → purchase" };
+function nlSegRows() {
+  const d = dash.data("step_rates");
+  if (d.status !== "ok") return { status: d.status, rows: [], all: null, pick: null };
+  const p = NL.params();
+  const type = p.segtype || "Device";
+  const rows = NL.num(d.data.filter((r) => r.segment_type === type), ["sessions", ...NL_COLS, "session_conversion"]);
+  const all = NL.num(d.data.filter((r) => r.segment_type === "All"), ["sessions", ...NL_COLS, "session_conversion"])[0];
+  const pick = rows.find((r) => r.segment === p.fseg) || rows.slice().sort((a, b) => a.checkout_to_shipping - b.checkout_to_shipping)[0];
+  return { status: "ok", rows, all, pick };
+}
+const nlLabel = (s) => s.replace(/^\d /, "");
+dash.draw("steps", (tbody) => {
+  const { status, rows, pick } = nlSegRows();
+  tbody.replaceChildren();
+  if (status !== "ok") return;
+  const best = Object.fromEntries(NL_COLS.map((c) => [c, d3.max(rows, (r) => r[c])]));
+  rows.forEach((r) => {
+    const tr = document.createElement("tr");
+    tr.dataset.key = encodeURIComponent(r.segment_type) + "," + encodeURIComponent(r.segment);
+    tr.tabIndex = 0;
+    if (pick && r.segment === pick.segment) tr.className = "nl-picked";
+    const choose = () => dash.setParams({ fseg: r.segment });
+    tr.addEventListener("click", choose);
+    tr.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(); } });
+    const add = (text, cls) => { const td = document.createElement("td"); td.textContent = text; if (cls) td.className = cls; tr.appendChild(td); };
+    add(nlLabel(r.segment)); add(NL.fmt.int(r.sessions));
+    NL_COLS.forEach((c) => { const lag = (best[c] - r[c]) * 100; add(NL.fmt.pct1(r[c]), rows.length > 1 ? (lag > 8 ? "nl-lag2" : lag > 3 ? "nl-lag1" : "") : ""); });
+    add(NL.fmt.pct1(r.session_conversion));
+    tbody.appendChild(tr);
+  });
+});
+dash.draw("profiletitle", (el) => {
+  const { status, pick } = nlSegRows();
+  el.textContent = status === "ok" && pick ? `Step profile: ${nlLabel(pick.segment)} vs. all sessions` : "—";
+});
+dash.draw("profile", (el) => {
+  const { status, pick, all } = nlSegRows();
+  if (status !== "ok" || !pick || !all) return NL.placeholder(el, status);
+  el.replaceChildren();
+  const W = el.clientWidth, H = 210;
+  const SHORT = { view_to_cart: "Cart", cart_to_checkout: "Checkout", checkout_to_shipping: "Shipping", shipping_to_payment: "Payment", payment_to_purchase: "Purchase" };
+  const narrow = W < 560;
+  const data = NL_COLS.map((c) => ({ col: c, label: narrow ? SHORT[c] : NL_COL_LABEL[c], full: NL_COL_LABEL[c], v: pick[c], a: all[c] }));
+  const svg = d3.select(el).append("svg").attr("width", "100%").attr("height", H).attr("viewBox", `0 0 ${W} ${H}`)
+    .attr("role", "img").attr("aria-label", `Step conversion for ${nlLabel(pick.segment)} compared with all sessions`);
+  const m = { t: 18, r: 8, b: narrow ? 52 : 40, l: NL.measure(svg, ["100%"]) + 8 };
+  const x = d3.scaleBand().domain(data.map((d) => d.label)).range([m.l, W - m.r]).padding(0.35);
+  const y = d3.scaleLinear().domain([0, 1]).range([H - m.b, m.t]);
+  svg.append("g").attr("class", "nl-gridline").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickSize(-(W - m.l - m.r)).tickFormat(""));
+  const t = NL.tip(el);
+  const g = svg.append("g").selectAll("g").data(data).join("g").attr("transform", (d) => `translate(${x(d.label)},0)`);
+  g.append("rect").attr("y", (d) => y(d.v)).attr("height", (d) => y(0) - y(d.v)).attr("width", x.bandwidth())
+    .style("fill", (d) => ((d.a - d.v) * 100 > 3 ? "var(--cds-chart-status-critical)" : NL.color(0)))
+    .on("pointermove", (e, d) => { const [px, py] = d3.pointer(e, el); t.show([[d.full, ""], [nlLabel(pick.segment), NL.fmt.pct1(d.v)], ["All sessions", NL.fmt.pct1(d.a)], ["Difference", d3.format("+.1f")((d.v - d.a) * 100) + " pts"]], px, py); })
+    .on("pointerleave", () => t.hide());
+  g.append("line").attr("x1", -3).attr("x2", x.bandwidth() + 3).attr("y1", (d) => y(d.a)).attr("y2", (d) => y(d.a)).style("stroke", "var(--cds-chart-reference)").attr("stroke-width", 2).attr("stroke-dasharray", "4 3");
+  if (x.bandwidth() > 30) g.append("text").attr("class", "nl-val").attr("x", x.bandwidth() / 2).attr("text-anchor", "middle").attr("y", (d) => Math.min(y(d.v), y(d.a)) - 5).text((d) => d3.format(".0%")(d.v));
+  const xa = svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickSize(0)).call((a) => a.select(".domain").remove());
+  if (narrow) xa.selectAll("text").attr("text-anchor", "end").attr("dy", "0.6em").attr("transform", "translate(0,4) rotate(-35)");
+  else xa.selectAll("text").attr("dy", "1em").each(function () {
+    const self = d3.select(this), words = self.text().split(" → ");
+    if (x.bandwidth() < NL.measure(svg, [self.text()]) + 6) { self.text(null); self.attr("dy", null); words.forEach((w, i) => self.append("tspan").attr("x", 0).attr("dy", i ? "1.1em" : "1.2em").text(i ? "→ " + w : w)); }
+  });
+  svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(d3.format(".0%"))).call((a) => a.select(".domain").remove());
+});
+
+// ---------- overview: daily trend with brush ----------
+dash.draw("daily", (el) => {
+  const d = dash.data("daily");
+  if (d.status !== "ok") return NL.placeholder(el, d.status);
+  el.replaceChildren();
+  const rows = NL.num(d.data, ["sessions", "purchases", "conversion", "gross_revenue"]).map((r) => ({ ...r, date: NL.parseDay(r.session_date) }));
+  const [rs, re] = NL.range();
+  const inRange = (r) => r.session_date >= rs && r.session_date <= re;
+  const W = el.clientWidth;
+  const svg = d3.select(el).append("svg").attr("role", "img").attr("aria-label", "Daily sessions as bars and session conversion as a line, October to December 2025");
+  const yS = d3.scaleLinear().domain([0, d3.max(rows, (r) => r.sessions) * 1.08]).nice();
+  const yC = d3.scaleLinear().domain([0, d3.max(rows, (r) => r.conversion) * 1.08]).nice();
+  const ml = NL.measure(svg, yS.ticks(5).map(d3.format(","))) + 10;
+  const mr = NL.measure(svg, yC.ticks(5).map(d3.format(".1%"))) + 10;
+  const x = d3.scaleUtc().domain([d3.utcDay.offset(rows[0].date, -1), d3.utcDay.offset(rows[rows.length - 1].date, 1)]).range([ml, W - mr]);
+  // event labels: greedy levels so no two labels on a level overlap
+  const events = [["2025-11-28", "Black Friday"], ["2025-12-01", "Cyber Monday"], ["2025-12-14", "Free Shipping Day"], ["2025-12-19", "Shipping cutoff"], ["2025-12-25", "Christmas"]];
+  const LH = 15, levels = [];
+  const placed = events.map(([day, label]) => {
+    const px = x(NL.parseDay(day)), w = NL.measure(svg, [label]) + 8;
+    const right = px + w <= W - mr;
+    const x0 = right ? px : px - w, x1 = right ? px + w : px;
+    let lv = 0; while (levels[lv] !== undefined && levels[lv] > x0) lv++;
+    levels[lv] = x1;
+    return { day, label, px, right, lv };
+  });
+  const nLv = W > 420 ? levels.length : 0;
+  const m = { t: 10 + nLv * LH, r: mr, b: 26, l: ml };
+  const H = 260 + nLv * LH;
+  svg.attr("width", "100%").attr("height", H).attr("viewBox", `0 0 ${W} ${H}`);
+  yS.range([H - m.b, m.t]); yC.range([H - m.b, m.t]);
+  svg.append("g").attr("class", "nl-gridline").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(yS).ticks(5).tickSize(-(W - m.l - m.r)).tickFormat(""));
+  const bw = Math.max(1, (x(rows[1].date) - x(rows[0].date)) * 0.75);
+  svg.append("g").selectAll("rect").data(rows).join("rect")
+    .attr("x", (r) => x(r.date) - bw / 2).attr("width", bw).attr("y", (r) => yS(r.sessions)).attr("height", (r) => yS(0) - yS(r.sessions))
+    .style("fill", NL.muted).style("opacity", (r) => (inRange(r) ? 1 : 0.35));
+  svg.append("path").datum(rows).attr("fill", "none").style("stroke", NL.color(0)).attr("stroke-width", 2)
+    .attr("d", d3.line().x((r) => x(r.date)).y((r) => yC(r.conversion)));
+  if (nLv) {
+    const ev = svg.append("g").attr("class", "nl-event").selectAll("g").data(placed).join("g").attr("transform", (e) => `translate(${e.px},0)`);
+    ev.append("line").attr("y1", (e) => 10 + e.lv * LH + 2).attr("y2", H - m.b);
+    ev.append("text").attr("x", (e) => (e.right ? 4 : -4)).attr("text-anchor", (e) => (e.right ? "start" : "end")).attr("y", (e) => 10 + e.lv * LH + 10).text((e) => e.label);
+  }
+  svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(W < 500 ? d3.utcMonth.every(1) : d3.utcWeek.every(2)).tickFormat(d3.utcFormat("%b %-d")));
+  svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(yS).ticks(5).tickFormat(d3.format(",")));
+  svg.append("g").attr("transform", `translate(${W - m.r},0)`).call(d3.axisRight(yC).ticks(5).tickFormat(d3.format(".1%")));
+  // brush to choose dates
+  const t = NL.tip(el);
+  const dot = svg.append("circle").attr("r", 4).style("fill", NL.color(0)).attr("opacity", 0).attr("pointer-events", "none");
+  const brush = d3.brushX().extent([[m.l, m.t], [W - m.r, H - m.b]])
+    .on("end", (e) => {
+      if (!e.sourceEvent) return;
+      if (!e.selection) { dash.setParams({ start: "2025-10-01", end: "2025-12-31" }); return; }
+      const [a, b] = e.selection.map((v) => d3.utcDay.round(x.invert(v)));
+      const clamp = (dt) => NL.fmtDay(dt < rows[0].date ? rows[0].date : dt > rows[rows.length - 1].date ? rows[rows.length - 1].date : dt);
+      const s = clamp(a), en = clamp(d3.utcDay.offset(b, b > a ? -1 : 0));
+      dash.setParams({ start: s, end: en < s ? s : en });
+    });
+  const bg = svg.append("g").call(brush);
+  if (!(rs === "2025-10-01" && re === "2025-12-31")) bg.call(brush.move, [x(d3.utcDay.offset(NL.parseDay(rs), -0.5)), x(d3.utcDay.offset(NL.parseDay(re), 0.5))]);
+  bg.select(".overlay").style("cursor", "crosshair")
+    .on("pointermove.tip", (e) => {
+      const [px, py] = d3.pointer(e, el);
+      const r = rows[Math.max(0, Math.min(rows.length - 1, d3.bisector((q) => q.date).center(rows, x.invert(d3.pointer(e)[0]))))];
+      dot.attr("cx", x(r.date)).attr("cy", yC(r.conversion)).attr("opacity", 1);
+      t.show([[d3.utcFormat("%a, %b %-d")(r.date), ""], ["Sessions", NL.fmt.int(r.sessions)], ["Orders", NL.fmt.int(r.purchases)], ["Conversion", NL.fmt.pct2(r.conversion)], ["Gross revenue", NL.fmt.usd0(r.gross_revenue)]], px, py);
+    })
+    .on("pointerleave.tip", () => { t.hide(); dot.attr("opacity", 0); });
+});
+
+// ---------- funnel chart ----------
+const NL_STEPS = ["1 Sessions", "2 Viewed product", "3 Added to cart", "4 Began checkout", "5 Entered shipping", "6 Entered payment", "7 Purchased"];
+const NL_STEP_NAME = { "1 Sessions": "All visits", "2 Viewed product": "Viewed a product", "3 Added to cart": "Added to cart", "4 Began checkout": "Started checkout", "5 Entered shipping": "Entered shipping", "6 Entered payment": "Entered payment", "7 Purchased": "Purchased" };
+dash.draw("funnel", (el) => {
+  const d = dash.data("funnel");
+  if (d.status !== "ok") return NL.placeholder(el, d.status);
+  el.replaceChildren();
+  const seg = NL.params().fdev || "All sessions";
+  const counts = (s) => NL_STEPS.map((st) => {
+    const r = d.data.find((q) => q.step === st && q.segment === s && q.segment_type === (s === "All sessions" ? "All" : "Device"));
+    return r ? +r.sessions : NaN;
+  });
+  const all = counts("All sessions"), cur = counts(seg);
+  if (cur.some((v) => !Number.isFinite(v)) || all.some((v) => !Number.isFinite(v))) return;
+  const compare = seg !== "All sessions";
+  const rows = NL_STEPS.map((st, i) => ({
+    name: NL_STEP_NAME[st], n: cur[i], share: cur[i] / cur[0], allShare: all[i] / all[0],
+    cont: i ? cur[i] / cur[i - 1] : null, allCont: i ? all[i] / all[i - 1] : null,
+  }));
+  rows.forEach((r) => { r.alert = compare && r.cont != null && (r.allCont - r.cont) * 100 > 3; });
+  const W = el.clientWidth, rowH = 30, gapH = 22;
+  const H = rows.length * rowH + (rows.length - 1) * gapH + 4;
+  const svg = d3.select(el).append("svg").attr("width", "100%").attr("height", H).attr("viewBox", `0 0 ${W} ${H}`)
+    .attr("role", "img").attr("aria-label", `Shopping funnel for ${compare ? seg + " visits" : "all visits"}: share of visits reaching each step`);
+  const right = (r) => `${NL.fmt.int(r.n)} · ${NL.fmt.pct1(r.share)}`;
+  const ml = NL.measure(svg, rows.map((r) => r.name)) + 12, mr = NL.measure(svg, rows.map(right)) + 12;
+  const span = Math.max(40, W - ml - mr), cx = ml + span / 2;
+  const w = d3.scaleLinear().domain([0, 1]).range([0, span]);
+  const t = NL.tip(el);
+  rows.forEach((r, i) => {
+    const y = i * (rowH + gapH);
+    const g = svg.append("g").attr("transform", `translate(0,${y})`);
+    if (compare) g.append("rect").attr("x", cx - w(r.allShare) / 2).attr("width", Math.max(1, w(r.allShare))).attr("y", 0).attr("height", rowH)
+      .attr("fill", "none").style("stroke", "var(--cds-chart-reference)").attr("stroke-dasharray", "4 3");
+    g.append("rect").attr("x", cx - w(r.share) / 2).attr("width", Math.max(2, w(r.share))).attr("y", 3).attr("height", rowH - 6).attr("rx", 3)
+      .style("fill", r.alert ? "var(--cds-chart-status-critical)" : NL.color(0));
+    g.append("text").attr("class", "nl-steplabel").attr("x", ml - 10).attr("y", rowH / 2).attr("dy", "0.35em").attr("text-anchor", "end").text(r.name);
+    g.append("text").attr("class", "nl-val").attr("x", W - mr + 10).attr("y", rowH / 2).attr("dy", "0.35em").text(right(r));
+    g.append("rect").attr("x", 0).attr("width", W).attr("y", 0).attr("height", rowH).attr("fill", "transparent")
+      .on("pointermove", (e) => {
+        const [px, py] = d3.pointer(e, el);
+        const lines = [[r.name, ""], ["Visits", NL.fmt.int(r.n)], ["Share of all visits", NL.fmt.pct1(r.share)]];
+        if (r.cont != null) lines.push(["Continued from previous step", NL.fmt.pct1(r.cont)]);
+        if (compare && r.cont != null) lines.push(["All visits, same step", NL.fmt.pct1(r.allCont)]);
+        t.show(lines, px, py);
+      })
+      .on("pointerleave", () => t.hide());
+    if (i < rows.length - 1) {
+      const nx = rows[i + 1];
+      const txt = `↓ ${NL.fmt.pct1(nx.cont)} continue` + (compare && W > 480 ? ` (all visits ${NL.fmt.pct1(nx.allCont)})` : "");
+      svg.append("text").attr("class", "nl-flow" + (nx.alert ? " nl-alert" : "")).attr("x", cx).attr("y", y + rowH + gapH / 2).attr("dy", "0.35em")
+        .attr("text-anchor", "middle").text(txt);
+    }
+  });
+});
+
+// ---------- decision: options chart ----------
+dash.draw("options", (el) => {
+  const d = dash.data("decision_options");
+  if (d.status !== "ok" || !d.data.length) return NL.placeholder(el, d.status);
+  el.replaceChildren();
+  const rows = d.data;
+  const W = el.clientWidth, H = 30 + rows.length * 48;
+  const svg = d3.select(el).append("svg").attr("width", "100%").attr("height", H).attr("viewBox", `0 0 ${W} ${H}`)
+    .attr("role", "img").attr("aria-label", "Revenue change versus the current checkout for each option, with 95% ranges");
+  const longLabel = (r) => `${NL.fmt.usdKs(r.total)}` + (r.total_low !== r.total_high ? `  (${NL.fmt.usdKs(r.total_low)} to ${NL.fmt.usdKs(r.total_high)})` : "");
+  const shortName = { "Keep current checkout": "Keep current", "Ship v2 as tested": "Ship v2 now", "Ship v2.1 after fixes (estimate)": "Fix, then ship (est.)" };
+  const ml0 = NL.measure(svg, rows.map((r) => r.option)) + 14;
+  const roomy = W - ml0 - NL.measure(svg, rows.map(longLabel)) - 14 >= 160;
+  const label = roomy ? longLabel : (r) => NL.fmt.usdKs(r.total);
+  const nameOf = roomy ? (r) => r.option : (r) => shortName[r.option] || r.option;
+  const m = { t: 6, r: NL.measure(svg, rows.map(label)) + 14, b: 24, l: (roomy ? ml0 : NL.measure(svg, rows.map(nameOf)) + 14) };
+  const lo = d3.min(rows, (r) => r.total_low), hi = d3.max(rows, (r) => r.total_high);
+  const x = d3.scaleLinear().domain([Math.min(0, lo), Math.max(0, hi)]).nice().range([m.l, W - m.r]);
+  const y = d3.scaleBand().domain(rows.map(nameOf)).range([m.t, H - m.b]).padding(0.45);
+  svg.append("g").attr("class", "nl-gridline").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(W - m.l - m.r < 360 ? 3 : 5).tickSize(-(H - m.t - m.b)).tickFormat(""));
+  svg.append("line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", m.t).attr("y2", H - m.b).style("stroke", "var(--cds-chart-reference)").attr("stroke-width", 1.5);
+  const colorOf = (r) => (r.option.startsWith("Ship v2.1") ? NL.color(0) : NL.muted);
+  const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (r) => `translate(0,${y(nameOf(r)) + y.bandwidth() / 2})`);
+  g.append("line").attr("x1", (r) => x(r.total_low)).attr("x2", (r) => x(r.total_high)).style("stroke", colorOf).attr("stroke-width", 6).attr("stroke-linecap", "round").style("opacity", 0.45);
+  g.append("circle").attr("cx", (r) => x(r.total)).attr("r", 6).style("fill", colorOf);
+  g.append("text").attr("class", "nl-val").attr("x", (r) => x(Math.max(r.total_high, r.total)) + 10).attr("dy", "0.35em").text(label);
+  const t = NL.tip(el);
+  g.append("rect").attr("x", 0).attr("width", W).attr("y", -y.step() / 2).attr("height", y.step()).attr("fill", "transparent")
+    .on("pointermove", (e, r) => { const [px, py] = d3.pointer(e, el); t.show([[r.option, ""], ["Over 7 weeks", longLabel(r)], ["Per checkout user", r.per_user ? `${d3.format("+$.2f")(r.per_user)} (${d3.format("+$.2f")(r.low)} to ${d3.format("+$.2f")(r.high)})` : "$0"], ["Checkout users", NL.fmt.int(r.users)]], px, py); })
+    .on("pointerleave", () => t.hide());
+  svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).tickSize(0)).call((a) => a.select(".domain").remove());
+  svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(W - m.l - m.r < 360 ? 3 : 5).tickFormat((v) => NL.fmt.usdKs(v))).call((a) => a.select(".domain").remove());
+});
+
+// ---------- funnel: shipping step by cart size ----------
+dash.draw("ship", (el) => {
+  const d = dash.data("ship_rates");
+  if (d.status !== "ok") return NL.placeholder(el, d.status);
+  el.replaceChildren();
+  const rows = d.data;
+  const groups = [["non-member", "Non-members (pay shipping under $49)"], ["loyalty member (free shipping)", "Loyalty members (always free shipping)"]];
+  const devices = ["desktop", "mobile", "tablet"], sizes = ["under $49", "$49+"];
+  const total = el.clientWidth, panelW = total >= 640 ? (total - 24) / 2 : total, H = 230;
+  const t = NL.tip(el);
+  const wrap = d3.select(el).append("div").style("display", "flex").style("flex-wrap", "wrap").style("gap", "24px");
+  groups.forEach(([key, title]) => {
+    const data = rows.filter((r) => r.member === key);
+    const svg = wrap.append("svg").attr("width", panelW).attr("height", H).attr("viewBox", `0 0 ${panelW} ${H}`)
+      .attr("role", "img").attr("aria-label", `${title}: shipping-step pass rate by device and cart size`);
+    const m = { t: 28, r: 6, b: 24, l: NL.measure(svg, ["100%"]) + 8 };
+    svg.append("text").attr("class", "nl-axis-label").attr("x", 0).attr("y", 14).text(title);
+    const x0 = d3.scaleBand().domain(devices).range([m.l, panelW - m.r]).paddingInner(0.25).paddingOuter(0.1);
+    const x1 = d3.scaleBand().domain(sizes).range([0, x0.bandwidth()]).padding(0.08);
+    const y = d3.scaleLinear().domain([0, 1]).range([H - m.b, m.t]);
+    svg.append("g").attr("class", "nl-gridline").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickSize(-(panelW - m.l - m.r)).tickFormat(""));
+    const g = svg.append("g").selectAll("g").data(data).join("g").attr("transform", (r) => `translate(${x0(r.device) + x1(r.cart_size)},0)`);
+    g.append("rect").attr("y", (r) => y(r.pass_rate)).attr("height", (r) => y(0) - y(r.pass_rate)).attr("width", x1.bandwidth())
+      .style("fill", (r) => NL.color(sizes.indexOf(r.cart_size)))
+      .on("pointermove", (e, r) => { const [px, py] = d3.pointer(e, el); t.show([[`${r.device}, cart ${r.cart_size}`, ""], ["Reached shipping", NL.fmt.pct1(r.pass_rate)], ["Checkouts", NL.fmt.int(r.checkouts)]], px, py); })
+      .on("pointerleave", () => t.hide());
+    if (x1.bandwidth() > 26) g.append("text").attr("class", "nl-val").attr("x", x1.bandwidth() / 2).attr("text-anchor", "middle").attr("y", (r) => y(r.pass_rate) - 4).text((r) => d3.format(".0%")(r.pass_rate));
+    svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x0).tickSize(0)).call((a) => a.select(".domain").remove());
+    svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(d3.format(".0%"))).call((a) => a.select(".domain").remove());
+  });
+});
+
+// ---------- funnel: sizing ----------
+dash.draw("sizing", (el) => {
+  const d = dash.data("sizing");
+  if (d.status !== "ok") return NL.placeholder(el, d.status);
+  el.replaceChildren();
+  const rows = NL.num(d.data, ["gross_revenue", "net_revenue", "extra_orders"]);
+  const W = el.clientWidth, H = 40 + rows.length * 42;
+  const svg = d3.select(el).append("svg").attr("width", "100%").attr("height", H).attr("viewBox", `0 0 ${W} ${H}`)
+    .attr("role", "img").attr("aria-label", "Q4 revenue lost to the mobile shipping-step leak under three scenarios");
+  const labels = rows.map((r) => r.scenario_short);
+  const longText = (r) => `${NL.fmt.usdK(r.gross_revenue)} gross · ${NL.fmt.usdK(r.net_revenue)} net`;
+  const ml0 = NL.measure(svg, labels) + 12;
+  const valText = W - ml0 - NL.measure(svg, rows.map(longText)) - 12 >= 140 ? longText : (r) => NL.fmt.usdK(r.gross_revenue);
+  const m = { t: 8, r: NL.measure(svg, rows.map(valText)) + 12, b: 24, l: ml0 };
+  const y = d3.scaleBand().domain(labels).range([m.t, H - m.b]).padding(0.3);
+  const x = d3.scaleLinear().domain([0, d3.max(rows, (r) => r.gross_revenue)]).nice().range([m.l, W - m.r]);
+  svg.append("g").attr("class", "nl-gridline").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(4).tickSize(-(H - m.t - m.b)).tickFormat(""));
+  const t = NL.tip(el);
+  svg.append("g").selectAll("rect").data(rows).join("rect").attr("x", m.l).attr("y", (r) => y(r.scenario_short)).attr("height", y.bandwidth())
+    .attr("width", (r) => x(r.gross_revenue) - m.l).style("fill", (r) => (r.scenario_short === "Base" ? NL.color(0) : NL.muted))
+    .on("pointermove", (e, r) => { const [px, py] = d3.pointer(e, el); t.show([[r.scenario, ""], ["Extra orders", NL.fmt.int(Math.round(r.extra_orders))], ["Gross", NL.fmt.usd0(r.gross_revenue)], ["Net", NL.fmt.usd0(r.net_revenue)]], px, py); })
+    .on("pointerleave", () => t.hide());
+  svg.append("g").selectAll("text").data(rows).join("text").attr("class", "nl-val").attr("x", (r) => x(r.gross_revenue) + 6)
+    .attr("y", (r) => y(r.scenario_short) + y.bandwidth() / 2).attr("dy", "0.35em").text(valText);
+  svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).tickSize(0)).call((a) => a.select(".domain").remove());
+  svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(4).tickFormat((v) => NL.fmt.usdK(v))).call((a) => a.select(".domain").remove());
+});
+
+// ---------- A/B: forest plot (click to select) ----------
+const NL_SEG_NAME = { "All exposed users": "All exposed users", "device: mobile": "Mobile", "device: desktop": "Desktop", "device: tablet": "Tablet", "loyalty member": "Loyalty members", "non-member": "Non-members" };
+function nlAbPick(rows) { const p = NL.params(); return rows.find((r) => r.segment === p.abseg) || rows.find((r) => r.segment === "device: mobile") || rows[0]; }
+dash.draw("forest", (el) => {
+  const d = dash.data("ab_segments");
+  if (d.status !== "ok") return NL.placeholder(el, d.status);
+  el.replaceChildren();
+  const rows = NL.num(d.data, ["lift_pts", "ci_low_pts", "ci_high_pts", "control", "treatment", "p_value", "n_control", "n_treatment"]).map((r) => ({ ...r, label: NL_SEG_NAME[r.segment] || r.segment }));
+  const pick = nlAbPick(rows);
+  const W = el.clientWidth, H = 30 + rows.length * 36;
+  const svg = d3.select(el).append("svg").attr("width", "100%").attr("height", H).attr("viewBox", `0 0 ${W} ${H}`)
+    .attr("role", "img").attr("aria-label", "Conversion lift by segment with 95% confidence intervals");
+  const m = { t: 6, r: 44, b: 24, l: NL.measure(svg, rows.map((r) => r.label)) + 12 };
+  const x = d3.scaleLinear().domain([Math.min(0, d3.min(rows, (r) => r.ci_low_pts)) - 0.5, d3.max(rows, (r) => r.ci_high_pts) + 0.5]).nice().range([m.l, W - m.r]);
+  const y = d3.scaleBand().domain(rows.map((r) => r.label)).range([m.t, H - m.b]).padding(0.4);
+  svg.append("g").attr("class", "nl-gridline").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(5).tickSize(-(H - m.t - m.b)).tickFormat(""));
+  svg.append("line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", m.t).attr("y2", H - m.b).style("stroke", "var(--cds-chart-reference)");
+  const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (r) => `translate(0,${y(r.label) + y.bandwidth() / 2})`);
+  g.append("rect").attr("x", 0).attr("width", W).attr("y", -y.step() / 2).attr("height", y.step())
+    .style("fill", (r) => (r === pick ? "color-mix(in srgb, var(--color-fg) 6%, transparent)" : "transparent"));
+  g.append("line").attr("x1", (r) => x(r.ci_low_pts)).attr("x2", (r) => x(r.ci_high_pts)).style("stroke", (r) => (r.ci_low_pts > 0 ? NL.color(0) : NL.muted)).attr("stroke-width", 2);
+  g.append("circle").attr("cx", (r) => x(r.lift_pts)).attr("r", 5).style("fill", (r) => (r.ci_low_pts > 0 ? NL.color(0) : NL.muted));
+  g.append("text").attr("class", "nl-val").attr("x", (r) => x(r.ci_high_pts) + 6).attr("dy", "0.35em").text((r) => d3.format("+.1f")(r.lift_pts));
+  const t = NL.tip(el);
+  g.append("rect").attr("class", "nl-hit").attr("x", 0).attr("width", W).attr("y", -y.step() / 2).attr("height", y.step()).attr("fill", "transparent")
+    .attr("tabindex", 0).attr("role", "button").attr("aria-label", (r) => `Show readout for ${r.label}`)
+    .on("click", (e, r) => dash.setParams({ abseg: r.segment }))
+    .on("keydown", (e, r) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); dash.setParams({ abseg: r.segment }); } })
+    .on("pointermove", (e, r) => { const [px, py] = d3.pointer(e, el); t.show([[r.label, ""], ["Lift", `${NL.fmt.pts1(r.lift_pts)} [${d3.format("+.1f")(r.ci_low_pts)}, ${d3.format("+.1f")(r.ci_high_pts)}]`], ["Click", "for the full readout"]], px, py); })
+    .on("pointerleave", () => t.hide());
+  svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).tickSize(0)).call((a) => a.select(".domain").remove())
+    .selectAll("text").style("font-weight", (l) => (l === pick.label ? "600" : null));
+  svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(5).tickFormat((v) => d3.format("+")(v) + " pts")).call((a) => a.select(".domain").remove());
+});
+dash.draw("abtitle", (el) => {
+  const d = dash.data("ab_segments");
+  if (d.status !== "ok") { el.textContent = "—"; return; }
+  const r = nlAbPick(d.data);
+  el.textContent = `Readout: ${NL_SEG_NAME[r.segment] || r.segment}`;
+});
+dash.draw("abdetail", (el) => {
+  const d = dash.data("ab_segments");
+  if (d.status !== "ok") return NL.placeholder(el, d.status);
+  el.replaceChildren();
+  const r = NL.num([nlAbPick(d.data)], ["lift_pts", "ci_low_pts", "ci_high_pts", "control", "treatment", "p_value", "n_control", "n_treatment", "relative_lift"])[0];
+  const where = "segment=" + encodeURIComponent(r.segment);
+  const grid = document.createElement("div"); grid.className = "nl-detail";
+  const item = (label, field, fmtName, cls) => {
+    const box = document.createElement("div"); box.className = "nl-detail-item";
+    const l = document.createElement("span"); l.className = "nl-tile-label"; l.textContent = label;
+    const v = document.createElement("span"); v.className = "nl-detail-big" + (cls ? " " + cls : "");
+    v.dataset.source = "ab_segments"; v.dataset.field = field; v.dataset.where = where;
+    v.textContent = NL.fmt[fmtName](r[field]);
+    box.append(l, v); grid.appendChild(box);
+  };
+  const sig = r.ci_low_pts > 0 || r.ci_high_pts < 0;
+  item("Lift", "lift_pts", "pts1", sig ? (r.lift_pts > 0 ? "nl-good" : "nl-bad") : "nl-flat");
+  item("Relative lift", "relative_lift", "pctchg");
+  item("p-value", "p_value", "p2");
+  item("Users, current", "n_control", "int");
+  item("Users, v2", "n_treatment", "int");
+  el.appendChild(grid);
+  const verdict = document.createElement("p"); verdict.className = "nl-note";
+  verdict.textContent = sig ? "The 95% interval excludes zero: a real difference." : "The 95% interval includes zero: no clear effect for this segment.";
+  el.appendChild(verdict);
+  // control vs treatment bars
+  const W = el.clientWidth, H = 96;
+  const svg = d3.select(el).append("svg").attr("width", "100%").attr("height", H).attr("viewBox", `0 0 ${W} ${H}`)
+    .attr("role", "img").attr("aria-label", `Conversion, current checkout vs checkout_v2, ${NL_SEG_NAME[r.segment] || r.segment}`);
+  const rowsB = [{ k: "Current", v: r.control, c: NL.muted }, { k: "checkout_v2", v: r.treatment, c: NL.color(0) }];
+  const m = { t: 4, r: 52, b: 20, l: NL.measure(svg, rowsB.map((q) => q.k)) + 12 };
+  const y = d3.scaleBand().domain(rowsB.map((q) => q.k)).range([m.t, H - m.b]).padding(0.25);
+  const x = d3.scaleLinear().domain([0, 1]).range([m.l, W - m.r]);
+  svg.append("g").selectAll("rect").data(rowsB).join("rect").attr("x", m.l).attr("y", (q) => y(q.k)).attr("height", y.bandwidth()).attr("width", (q) => x(q.v) - m.l).style("fill", (q) => q.c);
+  svg.append("g").selectAll("text").data(rowsB).join("text").attr("class", "nl-val").attr("x", (q) => x(q.v) + 6).attr("y", (q) => y(q.k) + y.bandwidth() / 2).attr("dy", "0.35em").text((q) => NL.fmt.pct1(q.v));
+  svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).tickSize(0)).call((a) => a.select(".domain").remove());
+  svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(4).tickFormat(d3.format(".0%"))).call((a) => a.select(".domain").remove());
+});
+
+// ---------- A/B: weekly lift ----------
+dash.draw("weekly", (el) => {
+  const d = dash.data("ab_weekly"), s = dash.data("ab_segments");
+  if (d.status !== "ok") return NL.placeholder(el, d.status);
+  el.replaceChildren();
+  const rows = NL.num(d.data, ["week", "lift_pts", "ci_low_pts", "ci_high_pts", "n_control", "n_treatment", "control", "treatment"]);
+  const overall = s.status === "ok" ? +((s.data.find((r) => r.segment === "All exposed users") || {}).lift_pts) : NaN;
+  const W = el.clientWidth, H = 240;
+  const svg = d3.select(el).append("svg").attr("width", "100%").attr("height", H).attr("viewBox", `0 0 ${W} ${H}`)
+    .attr("role", "img").attr("aria-label", "Conversion lift by week of first exposure with 95% confidence intervals");
+  const y = d3.scaleLinear().domain([d3.min(rows, (r) => r.ci_low_pts) - 0.5, d3.max(rows, (r) => r.ci_high_pts) + 0.5]).nice();
+  const m = { t: 10, r: 10, b: 30, l: NL.measure(svg, y.ticks(5).map((v) => d3.format("+")(v))) + 10 };
+  y.range([H - m.b, m.t]);
+  const x = d3.scalePoint().domain(rows.map((r) => r.week)).range([m.l, W - m.r]).padding(0.5);
+  svg.append("g").attr("class", "nl-gridline").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r)).tickFormat(""));
+  svg.append("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y(0)).attr("y2", y(0)).style("stroke", "var(--cds-chart-axis)");
+  if (Number.isFinite(overall)) svg.append("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y(overall)).attr("y2", y(overall)).style("stroke", "var(--cds-chart-reference)").attr("stroke-width", 2).attr("stroke-dasharray", "4 3");
+  svg.append("g").selectAll("line").data(rows).join("line").attr("x1", (r) => x(r.week)).attr("x2", (r) => x(r.week)).attr("y1", (r) => y(r.ci_low_pts)).attr("y2", (r) => y(r.ci_high_pts)).style("stroke", NL.muted).attr("stroke-width", 2);
+  svg.append("path").datum(rows).attr("fill", "none").style("stroke", NL.color(0)).attr("stroke-width", 1.5).attr("d", d3.line().x((r) => x(r.week)).y((r) => y(r.lift_pts)));
+  const t = NL.tip(el);
+  svg.append("g").selectAll("circle").data(rows).join("circle").attr("cx", (r) => x(r.week)).attr("cy", (r) => y(r.lift_pts)).attr("r", 5).style("fill", NL.color(0))
+    .on("pointermove", (e, r) => { const [px, py] = d3.pointer(e, el); t.show([[`Week ${r.week}`, ""], ["Current", NL.fmt.pct1(r.control)], ["checkout_v2", NL.fmt.pct1(r.treatment)], ["Lift", `${NL.fmt.pts1(r.lift_pts)} [${d3.format("+.1f")(r.ci_low_pts)}, ${d3.format("+.1f")(r.ci_high_pts)}]`], ["Users", `${NL.fmt.int(r.n_control)} vs ${NL.fmt.int(r.n_treatment)}`]], px, py); })
+    .on("pointerleave", () => t.hide());
+  svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickFormat((w) => `Wk ${w}`).tickSize(0)).call((a) => a.select(".domain").remove());
+  svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickFormat((v) => d3.format("+")(v))).call((a) => a.select(".domain").remove());
+});
+
+// ---------- A/B: payment errors ----------
+dash.draw("payments", (el) => {
+  const d = dash.data("ab_payments");
+  if (d.status !== "ok") return NL.placeholder(el, d.status);
+  el.replaceChildren();
+  const nice = { apple_pay: "Apple Pay", paypal: "PayPal", credit_card: "Credit card", store_card: "Store card" };
+  const rows = NL.num(d.data, ["control_error_rate", "treatment_error_rate", "ratio", "p_value", "n_control", "n_treatment"]).map((r) => ({ ...r, label: nice[r.payment_type] || r.payment_type }));
+  const W = el.clientWidth, H = 24 + rows.length * 46;
+  const svg = d3.select(el).append("svg").attr("width", "100%").attr("height", H).attr("viewBox", `0 0 ${W} ${H}`)
+    .attr("role", "img").attr("aria-label", "Payment error rate by payment type, current checkout vs checkout_v2");
+  const m = { t: 4, r: 44, b: 22, l: NL.measure(svg, rows.map((r) => r.label)) + 12 };
+  const y0 = d3.scaleBand().domain(rows.map((r) => r.label)).range([m.t, H - m.b]).padding(0.25);
+  const y1 = d3.scaleBand().domain(["control", "treatment"]).range([0, y0.bandwidth()]).padding(0.1);
+  const x = d3.scaleLinear().domain([0, d3.max(rows, (r) => Math.max(r.control_error_rate, r.treatment_error_rate))]).nice().range([m.l, W - m.r]);
+  const t = NL.tip(el);
+  const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (r) => `translate(0,${y0(r.label)})`);
+  [["control", "control_error_rate", NL.muted], ["treatment", "treatment_error_rate", NL.color(0)]].forEach(([k, f, c]) => {
+    g.append("rect").attr("x", m.l).attr("y", y1(k)).attr("height", y1.bandwidth()).attr("width", (r) => x(r[f]) - m.l).style("fill", c)
+      .on("pointermove", (e, r) => { const [px, py] = d3.pointer(e, el); t.show([[r.label, ""], ["Current", `${NL.fmt.pct1(r.control_error_rate)} of ${NL.fmt.int(r.n_control)}`], ["checkout_v2", `${NL.fmt.pct1(r.treatment_error_rate)} of ${NL.fmt.int(r.n_treatment)}`], ["Ratio", NL.fmt.ratio(r.ratio)], ["p", NL.fmt.p2(r.p_value)]], px, py); })
+      .on("pointerleave", () => t.hide());
+    g.append("text").attr("class", "nl-val").attr("x", (r) => x(r[f]) + 4).attr("y", y1(k) + y1.bandwidth() / 2).attr("dy", "0.35em").text((r) => NL.fmt.pct1(r[f]));
+  });
+  svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y0).tickSize(0)).call((a) => a.select(".domain").remove());
+  svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(4).tickFormat(d3.format(".0%"))).call((a) => a.select(".domain").remove());
+});
+
+dash._start();</script>
+</body>
+</html>
