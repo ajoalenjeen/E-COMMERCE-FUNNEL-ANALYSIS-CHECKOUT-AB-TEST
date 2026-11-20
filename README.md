@@ -64,7 +64,7 @@ An interactive funnel step explorer can be seen [here](https://ajoalenjeen.githu
      width="1000">
 * Out of every 100 visits, 63 view a product, 8 add to cart, 5 start checkout and 3.5 purchase. The biggest drop (view → cart, 12%) is normal browsing behavior.
 
-  #### Conversion by Segment [(link):](https://ajoalenjeen.github.io/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/Dashboard/ab_test_explorer.html)
+  #### Conversion by Segment: [(Link)](https://ajoalenjeen.github.io/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/Dashboard/ab_test_explorer.html)
   
 <img src="https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/acc4c5386fdc5e10886f1144bd22607eb217e3df/Pictures/Screenshot%202026-11-19%20132027.png" 
      alt="Top 20 Cities" 
@@ -95,7 +95,7 @@ An interactive funnel step explorer can be seen [here](https://ajoalenjeen.githu
 
 * The estimate stays within $50K–$75K across different assumptions for order value and purchase rate.
 
-### A/B Test Insights (checkout_v2, Nov 3 – Dec 21, 12,249 users):
+### A/B Test Insights (checkout_v2, Nov 3 – Dec 21, 12,249 users): [(Link)](https://ajoalenjeen.github.io/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/Dashboard/segment_explorer.html)
 
   <img src="https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/acc4c5386fdc5e10886f1144bd22607eb217e3df/Pictures/Screenshot%202026-11-19%20134320.png" 
      alt="Top 20 Cities" 
