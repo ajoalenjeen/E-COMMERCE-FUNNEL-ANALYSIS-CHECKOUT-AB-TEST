@@ -1,0 +1,721 @@
+item_id,item_name,brand,item_category,price
+WA10003,Juniper Lane Soft Wrap Dress,Juniper Lane,Women's Apparel,48.99
+WA10011,Marlowe Classic Cashmere Sweater,Marlowe,Women's Apparel,16.99
+WA10017,Juniper Lane Luxe Wide-Leg Trousers,Juniper Lane,Women's Apparel,54.0
+WA10025,Field Theory Essential Silk Blouse,Field Theory,Women's Apparel,44.0
+WA10033,Marlowe Studio Puffer Coat,Marlowe,Women's Apparel,63.0
+WA10039,Calder Cozy Knit Cardigan,Calder,Women's Apparel,35.5
+WA10046,Lune Studio Essential Midi Skirt,Lune Studio,Women's Apparel,85.0
+WA10050,Ossa Soft Turtleneck,Ossa,Women's Apparel,25.5
+WA10059,Kestrel Essential Wrap Dress,Kestrel,Women's Apparel,32.0
+WA10064,Northline Essentials Studio Cashmere Sweater,Northline Essentials,Women's Apparel,64.5
+WA10076,Field Theory Essential Wide-Leg Trousers,Field Theory,Women's Apparel,51.99
+WA10083,Harbor & Pine Heritage Silk Blouse,Harbor & Pine,Women's Apparel,68.5
+WA10085,Juniper Lane Soft Puffer Coat,Juniper Lane,Women's Apparel,55.5
+WA10094,Marlowe Signature Knit Cardigan,Marlowe,Women's Apparel,62.5
+WA10100,Alder Row Everyday Midi Skirt,Alder Row,Women's Apparel,17.99
+WA10111,Kestrel Studio Turtleneck,Kestrel,Women's Apparel,47.5
+WA10112,Field Theory Essential Wrap Dress,Field Theory,Women's Apparel,32.5
+WA10122,Bramble Signature Cashmere Sweater,Bramble,Women's Apparel,70.99
+WA10126,Calder Studio Wide-Leg Trousers,Calder,Women's Apparel,47.99
+WA10133,Marlowe Luxe Silk Blouse,Marlowe,Women's Apparel,32.99
+WA10146,Kestrel Signature Puffer Coat,Kestrel,Women's Apparel,43.5
+WA10153,Alder Row Everyday Knit Cardigan,Alder Row,Women's Apparel,21.0
+WA10157,Northline Essentials Soft Midi Skirt,Northline Essentials,Women's Apparel,29.0
+WA10165,Juniper Lane Classic Turtleneck,Juniper Lane,Women's Apparel,37.5
+WA10174,Marlowe Studio Wrap Dress,Marlowe,Women's Apparel,41.0
+WA10175,Ossa Soft Cashmere Sweater,Ossa,Women's Apparel,82.5
+WA10182,Alder Row Luxe Wide-Leg Trousers,Alder Row,Women's Apparel,90.0
+WA10194,Harbor & Pine Studio Silk Blouse,Harbor & Pine,Women's Apparel,72.5
+WA10201,Vesper Signature Puffer Coat,Vesper,Women's Apparel,80.0
+WA10209,Alder Row Essential Knit Cardigan,Alder Row,Women's Apparel,54.99
+WA10211,Marlowe Signature Midi Skirt,Marlowe,Women's Apparel,65.0
+WA10217,Harbor & Pine Signature Turtleneck,Harbor & Pine,Women's Apparel,23.5
+WA10230,Field Theory Modern Wrap Dress,Field Theory,Women's Apparel,38.99
+WA10233,Lune Studio Essential Cashmere Sweater,Lune Studio,Women's Apparel,29.0
+WA10244,Field Theory Everyday Wide-Leg Trousers,Field Theory,Women's Apparel,30.99
+WA10245,Marlowe Luxe Silk Blouse,Marlowe,Women's Apparel,69.0
+WA10258,Alder Row Essential Puffer Coat,Alder Row,Women's Apparel,52.5
+WA10260,Kestrel Everyday Knit Cardigan,Kestrel,Women's Apparel,31.5
+WA10270,Kestrel Cozy Midi Skirt,Kestrel,Women's Apparel,74.5
+WA10277,Kestrel Essential Turtleneck,Kestrel,Women's Apparel,71.5
+WA10285,Northline Essentials Essential Wrap Dress,Northline Essentials,Women's Apparel,72.5
+WA10292,Ossa Signature Cashmere Sweater,Ossa,Women's Apparel,97.99
+WA10294,Ossa Signature Wide-Leg Trousers,Ossa,Women's Apparel,54.5
+WA10307,Marlowe Modern Silk Blouse,Marlowe,Women's Apparel,28.5
+WA10314,Harbor & Pine Signature Puffer Coat,Harbor & Pine,Women's Apparel,44.0
+WA10315,Alder Row Studio Knit Cardigan,Alder Row,Women's Apparel,23.5
+WA10324,Northline Essentials Cozy Midi Skirt,Northline Essentials,Women's Apparel,17.0
+WA10332,Alder Row Signature Turtleneck,Alder Row,Women's Apparel,82.0
+WA10339,Northline Essentials Everyday Wrap Dress,Northline Essentials,Women's Apparel,52.5
+WA10343,Harbor & Pine Essential Cashmere Sweater,Harbor & Pine,Women's Apparel,81.99
+WA10355,Lune Studio Everyday Wide-Leg Trousers,Lune Studio,Women's Apparel,29.99
+WA10360,Ossa Signature Silk Blouse,Ossa,Women's Apparel,65.99
+WA10369,Ossa Heritage Puffer Coat,Ossa,Women's Apparel,21.99
+WA10377,Field Theory Luxe Knit Cardigan,Field Theory,Women's Apparel,62.5
+WA10380,Alder Row Signature Midi Skirt,Alder Row,Women's Apparel,56.0
+WA10389,Calder Studio Turtleneck,Calder,Women's Apparel,30.99
+WA10398,Alder Row Essential Wrap Dress,Alder Row,Women's Apparel,32.0
+WA10405,Alder Row Classic Cashmere Sweater,Alder Row,Women's Apparel,61.99
+WA10408,Juniper Lane Essential Wide-Leg Trousers,Juniper Lane,Women's Apparel,46.99
+WA10419,Bramble Modern Silk Blouse,Bramble,Women's Apparel,56.5
+WA10423,Kestrel Everyday Puffer Coat,Kestrel,Women's Apparel,63.99
+WA10428,Bramble Modern Knit Cardigan,Bramble,Women's Apparel,46.5
+WA10436,Bramble Luxe Midi Skirt,Bramble,Women's Apparel,96.99
+WA10446,Field Theory Modern Turtleneck,Field Theory,Women's Apparel,55.99
+WA10454,Marlowe Signature Wrap Dress,Marlowe,Women's Apparel,108.0
+WA10461,Field Theory Modern Cashmere Sweater,Field Theory,Women's Apparel,110.0
+WA10462,Juniper Lane Cozy Wide-Leg Trousers,Juniper Lane,Women's Apparel,54.0
+WA10469,Northline Essentials Classic Silk Blouse,Northline Essentials,Women's Apparel,66.0
+WA10476,Juniper Lane Everyday Puffer Coat,Juniper Lane,Women's Apparel,207.99
+WA10484,Northline Essentials Modern Knit Cardigan,Northline Essentials,Women's Apparel,38.99
+WA10492,Vesper Modern Midi Skirt,Vesper,Women's Apparel,17.99
+WA10498,Vesper Soft Turtleneck,Vesper,Women's Apparel,21.0
+WA10506,Kestrel Essential Wrap Dress,Kestrel,Women's Apparel,26.99
+WA10511,Calder Classic Cashmere Sweater,Calder,Women's Apparel,57.5
+WA10519,Harbor & Pine Studio Wide-Leg Trousers,Harbor & Pine,Women's Apparel,37.99
+WA10525,Calder Luxe Silk Blouse,Calder,Women's Apparel,43.0
+WA10538,Field Theory Studio Puffer Coat,Field Theory,Women's Apparel,34.5
+WA10539,Vesper Luxe Knit Cardigan,Vesper,Women's Apparel,55.0
+WA10551,Calder Cozy Midi Skirt,Calder,Women's Apparel,43.99
+WA10555,Lune Studio Classic Turtleneck,Lune Studio,Women's Apparel,51.0
+WA10564,Kestrel Essential Wrap Dress,Kestrel,Women's Apparel,42.99
+WA10568,Juniper Lane Classic Cashmere Sweater,Juniper Lane,Women's Apparel,54.5
+WA10576,Marlowe Studio Wide-Leg Trousers,Marlowe,Women's Apparel,24.99
+WA10582,Calder Heritage Silk Blouse,Calder,Women's Apparel,68.5
+WA10589,Kestrel Cozy Puffer Coat,Kestrel,Women's Apparel,59.0
+WA10597,Bramble Cozy Knit Cardigan,Bramble,Women's Apparel,70.0
+WA10603,Calder Luxe Midi Skirt,Calder,Women's Apparel,46.5
+WA10614,Harbor & Pine Luxe Turtleneck,Harbor & Pine,Women's Apparel,86.5
+WA10619,Vesper Heritage Wrap Dress,Vesper,Women's Apparel,62.0
+WA10623,Lune Studio Cozy Cashmere Sweater,Lune Studio,Women's Apparel,41.5
+MA10005,Bramble Soft Oxford Shirt,Bramble,Men's Apparel,40.0
+MA10008,Bramble Luxe Merino Sweater,Bramble,Men's Apparel,33.0
+MA10014,Lune Studio Cozy Chino Pants,Lune Studio,Men's Apparel,63.5
+MA10025,Marlowe Modern Quilted Jacket,Marlowe,Men's Apparel,43.99
+MA10034,Lune Studio Studio Wool Overcoat,Lune Studio,Men's Apparel,37.0
+MA10040,Northline Essentials Essential Fleece Pullover,Northline Essentials,Men's Apparel,68.99
+MA10043,Bramble Classic Slim Jeans,Bramble,Men's Apparel,14.0
+MA10051,Lune Studio Essential Flannel Shirt,Lune Studio,Men's Apparel,180.0
+MA10056,Lune Studio Soft Oxford Shirt,Lune Studio,Men's Apparel,56.5
+MA10068,Kestrel Everyday Merino Sweater,Kestrel,Men's Apparel,57.99
+MA10075,Lune Studio Luxe Chino Pants,Lune Studio,Men's Apparel,38.0
+MA10080,Alder Row Heritage Quilted Jacket,Alder Row,Men's Apparel,56.5
+MA10088,Bramble Luxe Wool Overcoat,Bramble,Men's Apparel,43.99
+MA10093,Marlowe Cozy Fleece Pullover,Marlowe,Men's Apparel,54.0
+MA10102,Lune Studio Soft Slim Jeans,Lune Studio,Men's Apparel,42.0
+MA10110,Ossa Cozy Flannel Shirt,Ossa,Men's Apparel,37.0
+MA10118,Ossa Soft Oxford Shirt,Ossa,Men's Apparel,73.5
+MA10119,Alder Row Luxe Merino Sweater,Alder Row,Men's Apparel,45.99
+MA10128,Marlowe Cozy Chino Pants,Marlowe,Men's Apparel,44.99
+MA10139,Ossa Classic Quilted Jacket,Ossa,Men's Apparel,116.0
+MA10142,Juniper Lane Cozy Wool Overcoat,Juniper Lane,Men's Apparel,61.99
+MA10153,Kestrel Essential Fleece Pullover,Kestrel,Men's Apparel,23.99
+MA10154,Lune Studio Cozy Slim Jeans,Lune Studio,Men's Apparel,72.99
+MA10162,Alder Row Studio Flannel Shirt,Alder Row,Men's Apparel,31.99
+MA10170,Kestrel Cozy Oxford Shirt,Kestrel,Men's Apparel,32.5
+MA10176,Alder Row Cozy Merino Sweater,Alder Row,Men's Apparel,25.99
+MA10182,Alder Row Heritage Chino Pants,Alder Row,Men's Apparel,25.5
+MA10190,Vesper Signature Quilted Jacket,Vesper,Men's Apparel,61.5
+MA10202,Ossa Everyday Wool Overcoat,Ossa,Men's Apparel,124.0
+MA10203,Lune Studio Signature Fleece Pullover,Lune Studio,Men's Apparel,36.99
+MA10215,Alder Row Classic Slim Jeans,Alder Row,Men's Apparel,68.5
+MA10221,Northline Essentials Modern Flannel Shirt,Northline Essentials,Men's Apparel,42.99
+MA10230,Alder Row Essential Oxford Shirt,Alder Row,Men's Apparel,38.0
+MA10232,Lune Studio Signature Merino Sweater,Lune Studio,Men's Apparel,69.99
+MA10239,Alder Row Luxe Chino Pants,Alder Row,Men's Apparel,39.99
+MA10245,Vesper Everyday Quilted Jacket,Vesper,Men's Apparel,41.99
+MA10257,Ossa Studio Wool Overcoat,Ossa,Men's Apparel,91.5
+MA10264,Juniper Lane Heritage Fleece Pullover,Juniper Lane,Men's Apparel,29.99
+MA10271,Alder Row Everyday Slim Jeans,Alder Row,Men's Apparel,46.99
+MA10275,Kestrel Heritage Flannel Shirt,Kestrel,Men's Apparel,66.5
+MA10284,Kestrel Essential Oxford Shirt,Kestrel,Men's Apparel,35.99
+MA10287,Ossa Studio Merino Sweater,Ossa,Men's Apparel,73.0
+MA10297,Field Theory Heritage Chino Pants,Field Theory,Men's Apparel,26.99
+MA10304,Ossa Heritage Quilted Jacket,Ossa,Men's Apparel,58.0
+MA10312,Bramble Soft Wool Overcoat,Bramble,Men's Apparel,42.99
+MA10315,Northline Essentials Essential Fleece Pullover,Northline Essentials,Men's Apparel,21.5
+MA10323,Northline Essentials Modern Slim Jeans,Northline Essentials,Men's Apparel,34.5
+MA10332,Harbor & Pine Modern Flannel Shirt,Harbor & Pine,Men's Apparel,46.0
+MA10337,Kestrel Classic Oxford Shirt,Kestrel,Men's Apparel,47.5
+MA10348,Juniper Lane Cozy Merino Sweater,Juniper Lane,Men's Apparel,46.5
+MA10351,Field Theory Modern Chino Pants,Field Theory,Men's Apparel,53.5
+MA10360,Calder Modern Quilted Jacket,Calder,Men's Apparel,108.5
+MA10365,Northline Essentials Studio Wool Overcoat,Northline Essentials,Men's Apparel,25.0
+MA10371,Alder Row Modern Fleece Pullover,Alder Row,Men's Apparel,46.5
+MA10379,Marlowe Cozy Slim Jeans,Marlowe,Men's Apparel,29.5
+MA10389,Ossa Luxe Flannel Shirt,Ossa,Men's Apparel,57.0
+MA10397,Bramble Everyday Oxford Shirt,Bramble,Men's Apparel,83.5
+MA10403,Field Theory Studio Merino Sweater,Field Theory,Men's Apparel,37.0
+MA10406,Ossa Soft Chino Pants,Ossa,Men's Apparel,38.5
+MA10415,Harbor & Pine Signature Quilted Jacket,Harbor & Pine,Men's Apparel,63.5
+MA10420,Lune Studio Heritage Wool Overcoat,Lune Studio,Men's Apparel,83.5
+MA10432,Harbor & Pine Essential Fleece Pullover,Harbor & Pine,Men's Apparel,152.99
+MA10434,Calder Everyday Slim Jeans,Calder,Men's Apparel,45.99
+MA10441,Vesper Classic Flannel Shirt,Vesper,Men's Apparel,47.5
+MA10449,Ossa Cozy Oxford Shirt,Ossa,Men's Apparel,36.99
+MA10459,Field Theory Studio Merino Sweater,Field Theory,Men's Apparel,44.0
+MA10467,Lune Studio Classic Chino Pants,Lune Studio,Men's Apparel,34.0
+MA10472,Marlowe Studio Quilted Jacket,Marlowe,Men's Apparel,53.0
+MA10482,Juniper Lane Everyday Wool Overcoat,Juniper Lane,Men's Apparel,49.99
+MA10484,Calder Luxe Fleece Pullover,Calder,Men's Apparel,124.0
+MA10492,Field Theory Essential Slim Jeans,Field Theory,Men's Apparel,26.0
+MA10500,Bramble Classic Flannel Shirt,Bramble,Men's Apparel,48.99
+MA10510,Ossa Cozy Oxford Shirt,Ossa,Men's Apparel,79.0
+MA10516,Marlowe Signature Merino Sweater,Marlowe,Men's Apparel,58.0
+MA10523,Field Theory Signature Chino Pants,Field Theory,Men's Apparel,72.99
+MA10531,Lune Studio Cozy Quilted Jacket,Lune Studio,Men's Apparel,73.5
+MA10534,Marlowe Modern Wool Overcoat,Marlowe,Men's Apparel,65.5
+MA10545,Bramble Heritage Fleece Pullover,Bramble,Men's Apparel,45.99
+MA10549,Calder Luxe Slim Jeans,Calder,Men's Apparel,50.5
+MA10555,Ossa Heritage Flannel Shirt,Ossa,Men's Apparel,108.5
+MA10565,Harbor & Pine Cozy Oxford Shirt,Harbor & Pine,Men's Apparel,31.99
+MA10573,Ossa Essential Merino Sweater,Ossa,Men's Apparel,81.5
+MA10577,Field Theory Modern Chino Pants,Field Theory,Men's Apparel,17.0
+MA10581,Lune Studio Signature Quilted Jacket,Lune Studio,Men's Apparel,35.5
+MA10591,Bramble Classic Wool Overcoat,Bramble,Men's Apparel,54.0
+MA10601,Alder Row Luxe Fleece Pullover,Alder Row,Men's Apparel,68.5
+MA10603,Calder Everyday Slim Jeans,Calder,Men's Apparel,77.0
+MA10611,Juniper Lane Studio Flannel Shirt,Juniper Lane,Men's Apparel,29.5
+MA10618,Marlowe Cozy Oxford Shirt,Marlowe,Men's Apparel,60.5
+MA10628,Calder Classic Merino Sweater,Calder,Men's Apparel,34.99
+SH10005,Calder Heritage Leather Boots,Calder,Shoes,62.0
+SH10011,Lune Studio Modern Running Sneakers,Lune Studio,Shoes,44.0
+SH10016,Harbor & Pine Modern Chelsea Boots,Harbor & Pine,Shoes,80.5
+SH10025,Bramble Studio Loafers,Bramble,Shoes,61.5
+SH10033,Kestrel Essential Ankle Booties,Kestrel,Shoes,97.99
+SH10039,Alder Row Luxe Slippers,Alder Row,Shoes,50.99
+SH10044,Bramble Modern Block Heels,Bramble,Shoes,39.99
+SH10051,Field Theory Studio Snow Boots,Field Theory,Shoes,86.5
+SH10056,Lune Studio Modern Leather Boots,Lune Studio,Shoes,81.0
+SH10066,Bramble Modern Running Sneakers,Bramble,Shoes,80.99
+SH10074,Northline Essentials Soft Chelsea Boots,Northline Essentials,Shoes,47.99
+SH10079,Marlowe Signature Loafers,Marlowe,Shoes,67.99
+SH10086,Calder Luxe Ankle Booties,Calder,Shoes,136.99
+SH10093,Alder Row Studio Slippers,Alder Row,Shoes,102.99
+SH10102,Northline Essentials Signature Block Heels,Northline Essentials,Shoes,139.99
+SH10111,Harbor & Pine Cozy Snow Boots,Harbor & Pine,Shoes,33.5
+SH10117,Juniper Lane Studio Leather Boots,Juniper Lane,Shoes,48.0
+SH10122,Juniper Lane Soft Running Sneakers,Juniper Lane,Shoes,51.99
+SH10132,Lune Studio Cozy Chelsea Boots,Lune Studio,Shoes,40.5
+SH10136,Marlowe Signature Loafers,Marlowe,Shoes,86.0
+SH10140,Northline Essentials Classic Ankle Booties,Northline Essentials,Shoes,69.5
+SH10151,Northline Essentials Modern Slippers,Northline Essentials,Shoes,72.99
+SH10158,Ossa Modern Block Heels,Ossa,Shoes,54.99
+SH10163,Bramble Soft Snow Boots,Bramble,Shoes,53.0
+SH10170,Harbor & Pine Essential Leather Boots,Harbor & Pine,Shoes,54.0
+SH10179,Alder Row Modern Running Sneakers,Alder Row,Shoes,62.0
+SH10184,Northline Essentials Essential Chelsea Boots,Northline Essentials,Shoes,58.5
+SH10191,Harbor & Pine Cozy Loafers,Harbor & Pine,Shoes,67.5
+SH10202,Vesper Classic Ankle Booties,Vesper,Shoes,137.5
+SH10205,Calder Everyday Slippers,Calder,Shoes,63.5
+SH10210,Ossa Heritage Block Heels,Ossa,Shoes,107.5
+SH10220,Juniper Lane Soft Snow Boots,Juniper Lane,Shoes,86.99
+SH10226,Juniper Lane Studio Leather Boots,Juniper Lane,Shoes,52.5
+SH10235,Field Theory Studio Running Sneakers,Field Theory,Shoes,25.5
+SH10244,Northline Essentials Classic Chelsea Boots,Northline Essentials,Shoes,69.99
+SH10250,Harbor & Pine Luxe Loafers,Harbor & Pine,Shoes,103.99
+SH10258,Kestrel Cozy Ankle Booties,Kestrel,Shoes,64.5
+SH10262,Kestrel Modern Slippers,Kestrel,Shoes,106.5
+SH10268,Bramble Studio Block Heels,Bramble,Shoes,62.0
+SH10277,Alder Row Studio Snow Boots,Alder Row,Shoes,55.0
+SH10280,Ossa Signature Leather Boots,Ossa,Shoes,60.5
+SH10289,Alder Row Everyday Running Sneakers,Alder Row,Shoes,65.5
+SH10296,Alder Row Essential Chelsea Boots,Alder Row,Shoes,97.0
+SH10301,Calder Essential Loafers,Calder,Shoes,53.5
+SH10314,Marlowe Cozy Ankle Booties,Marlowe,Shoes,44.0
+SH10316,Calder Modern Slippers,Calder,Shoes,72.0
+SH10326,Kestrel Soft Block Heels,Kestrel,Shoes,88.0
+SH10333,Alder Row Cozy Snow Boots,Alder Row,Shoes,97.5
+SH10339,Calder Luxe Leather Boots,Calder,Shoes,67.5
+SH10343,Northline Essentials Everyday Running Sneakers,Northline Essentials,Shoes,90.0
+SH10356,Ossa Heritage Chelsea Boots,Ossa,Shoes,25.0
+SH10362,Calder Essential Loafers,Calder,Shoes,75.99
+SH10370,Ossa Studio Ankle Booties,Ossa,Shoes,50.0
+SH10376,Vesper Soft Slippers,Vesper,Shoes,35.5
+SH10379,Lune Studio Classic Block Heels,Lune Studio,Shoes,51.0
+SH10389,Lune Studio Modern Snow Boots,Lune Studio,Shoes,85.99
+SH10395,Vesper Studio Leather Boots,Vesper,Shoes,58.0
+SH10402,Lune Studio Studio Running Sneakers,Lune Studio,Shoes,39.0
+SH10410,Harbor & Pine Heritage Chelsea Boots,Harbor & Pine,Shoes,52.5
+SH10415,Vesper Cozy Loafers,Vesper,Shoes,25.0
+SH10420,Ossa Soft Ankle Booties,Ossa,Shoes,59.99
+SH10430,Juniper Lane Soft Slippers,Juniper Lane,Shoes,58.0
+SH10435,Kestrel Heritage Block Heels,Kestrel,Shoes,52.99
+SH10446,Juniper Lane Luxe Snow Boots,Juniper Lane,Shoes,44.0
+SH10449,Alder Row Luxe Leather Boots,Alder Row,Shoes,76.5
+SH10457,Kestrel Essential Running Sneakers,Kestrel,Shoes,47.5
+SH10468,Harbor & Pine Everyday Chelsea Boots,Harbor & Pine,Shoes,55.0
+SH10475,Harbor & Pine Studio Loafers,Harbor & Pine,Shoes,40.5
+SH10478,Marlowe Modern Ankle Booties,Marlowe,Shoes,31.5
+SH10488,Lune Studio Soft Slippers,Lune Studio,Shoes,110.99
+SH10492,Kestrel Cozy Block Heels,Kestrel,Shoes,58.0
+SH10502,Ossa Luxe Snow Boots,Ossa,Shoes,47.0
+SH10510,Bramble Cozy Leather Boots,Bramble,Shoes,33.0
+SH10513,Bramble Luxe Running Sneakers,Bramble,Shoes,74.5
+SH10523,Vesper Heritage Chelsea Boots,Vesper,Shoes,82.99
+SH10527,Bramble Classic Loafers,Bramble,Shoes,39.99
+SH10533,Field Theory Modern Ankle Booties,Field Theory,Shoes,41.99
+SH10541,Northline Essentials Luxe Slippers,Northline Essentials,Shoes,30.5
+SH10546,Kestrel Signature Block Heels,Kestrel,Shoes,90.99
+SH10553,Vesper Signature Snow Boots,Vesper,Shoes,39.5
+SH10562,Harbor & Pine Everyday Leather Boots,Harbor & Pine,Shoes,119.99
+SH10569,Alder Row Everyday Running Sneakers,Alder Row,Shoes,78.99
+SH10576,Bramble Luxe Chelsea Boots,Bramble,Shoes,74.0
+SH10581,Kestrel Soft Loafers,Kestrel,Shoes,88.0
+SH10594,Northline Essentials Classic Ankle Booties,Northline Essentials,Shoes,69.99
+SH10601,Field Theory Heritage Slippers,Field Theory,Shoes,56.0
+SH10603,Northline Essentials Classic Block Heels,Northline Essentials,Shoes,96.0
+SH10609,Bramble Cozy Snow Boots,Bramble,Shoes,96.99
+SH10622,Alder Row Modern Leather Boots,Alder Row,Shoes,72.5
+SH10626,Ossa Studio Running Sneakers,Ossa,Shoes,86.99
+BE10000,Juniper Lane Heritage Eau de Parfum,Juniper Lane,Beauty,22.99
+BE10013,Bramble Luxe Gift Set,Bramble,Beauty,35.5
+BE10017,Harbor & Pine Classic Moisturizer,Harbor & Pine,Beauty,48.0
+BE10027,Juniper Lane Heritage Lipstick Trio,Juniper Lane,Beauty,140.99
+BE10030,Marlowe Essential Serum,Marlowe,Beauty,8.0
+BE10037,Alder Row Everyday Eye Palette,Alder Row,Beauty,23.5
+BE10046,Harbor & Pine Cozy Candle,Harbor & Pine,Beauty,19.99
+BE10049,Bramble Luxe Body Lotion,Bramble,Beauty,42.5
+BE10058,Alder Row Everyday Eau de Parfum,Alder Row,Beauty,47.0
+BE10068,Alder Row Cozy Gift Set,Alder Row,Beauty,40.99
+BE10073,Bramble Studio Moisturizer,Bramble,Beauty,26.99
+BE10080,Ossa Signature Lipstick Trio,Ossa,Beauty,35.99
+BE10084,Alder Row Modern Serum,Alder Row,Beauty,23.99
+BE10093,Ossa Signature Eye Palette,Ossa,Beauty,30.0
+BE10104,Ossa Luxe Candle,Ossa,Beauty,14.0
+BE10109,Juniper Lane Essential Body Lotion,Juniper Lane,Beauty,30.99
+BE10115,Calder Everyday Eau de Parfum,Calder,Beauty,43.5
+BE10121,Lune Studio Everyday Gift Set,Lune Studio,Beauty,34.0
+BE10132,Harbor & Pine Everyday Moisturizer,Harbor & Pine,Beauty,31.5
+BE10136,Juniper Lane Essential Lipstick Trio,Juniper Lane,Beauty,19.0
+BE10145,Ossa Cozy Serum,Ossa,Beauty,13.0
+BE10152,Harbor & Pine Signature Eye Palette,Harbor & Pine,Beauty,24.0
+BE10158,Ossa Classic Candle,Ossa,Beauty,12.5
+BE10164,Bramble Studio Body Lotion,Bramble,Beauty,24.99
+BE10168,Ossa Heritage Eau de Parfum,Ossa,Beauty,17.5
+BE10177,Lune Studio Luxe Gift Set,Lune Studio,Beauty,17.0
+BE10184,Northline Essentials Cozy Moisturizer,Northline Essentials,Beauty,56.5
+BE10189,Lune Studio Heritage Lipstick Trio,Lune Studio,Beauty,40.99
+BE10201,Northline Essentials Everyday Serum,Northline Essentials,Beauty,34.0
+BE10203,Ossa Signature Eye Palette,Ossa,Beauty,72.5
+BE10214,Marlowe Luxe Candle,Marlowe,Beauty,13.99
+BE10217,Harbor & Pine Signature Body Lotion,Harbor & Pine,Beauty,51.5
+BE10227,Kestrel Classic Eau de Parfum,Kestrel,Beauty,18.0
+BE10232,Marlowe Everyday Gift Set,Marlowe,Beauty,30.0
+BE10241,Calder Essential Moisturizer,Calder,Beauty,63.0
+BE10251,Juniper Lane Classic Lipstick Trio,Juniper Lane,Beauty,19.99
+BE10255,Alder Row Signature Serum,Alder Row,Beauty,18.0
+BE10265,Northline Essentials Studio Eye Palette,Northline Essentials,Beauty,12.5
+BE10267,Field Theory Signature Candle,Field Theory,Beauty,16.5
+BE10278,Ossa Modern Body Lotion,Ossa,Beauty,19.5
+BE10285,Bramble Signature Eau de Parfum,Bramble,Beauty,21.0
+BE10290,Calder Cozy Gift Set,Calder,Beauty,34.5
+BE10300,Field Theory Everyday Moisturizer,Field Theory,Beauty,15.99
+BE10301,Kestrel Classic Lipstick Trio,Kestrel,Beauty,23.5
+BE10310,Marlowe Essential Serum,Marlowe,Beauty,33.99
+BE10319,Harbor & Pine Everyday Eye Palette,Harbor & Pine,Beauty,20.5
+BE10322,Marlowe Modern Candle,Marlowe,Beauty,27.5
+BE10334,Alder Row Studio Body Lotion,Alder Row,Beauty,19.99
+BE10336,Vesper Luxe Eau de Parfum,Vesper,Beauty,44.5
+BE10346,Marlowe Signature Gift Set,Marlowe,Beauty,19.99
+BE10355,Marlowe Cozy Moisturizer,Marlowe,Beauty,14.99
+BE10362,Northline Essentials Soft Lipstick Trio,Northline Essentials,Beauty,51.99
+BE10368,Calder Soft Serum,Calder,Beauty,21.5
+BE10377,Kestrel Everyday Eye Palette,Kestrel,Beauty,16.99
+BE10380,Harbor & Pine Luxe Candle,Harbor & Pine,Beauty,14.0
+BE10388,Alder Row Modern Body Lotion,Alder Row,Beauty,20.0
+BE10397,Alder Row Everyday Eau de Parfum,Alder Row,Beauty,23.99
+BE10400,Juniper Lane Classic Gift Set,Juniper Lane,Beauty,26.99
+BE10412,Calder Essential Moisturizer,Calder,Beauty,33.0
+BE10413,Juniper Lane Modern Lipstick Trio,Juniper Lane,Beauty,62.5
+BE10422,Field Theory Modern Serum,Field Theory,Beauty,20.0
+BE10430,Vesper Heritage Eye Palette,Vesper,Beauty,19.5
+BE10436,Kestrel Essential Candle,Kestrel,Beauty,23.5
+BE10444,Field Theory Cozy Body Lotion,Field Theory,Beauty,34.5
+BE10452,Kestrel Cozy Eau de Parfum,Kestrel,Beauty,22.99
+BE10455,Kestrel Signature Gift Set,Kestrel,Beauty,16.99
+BE10465,Kestrel Heritage Moisturizer,Kestrel,Beauty,27.0
+BE10473,Kestrel Signature Lipstick Trio,Kestrel,Beauty,56.99
+BE10478,Lune Studio Luxe Serum,Lune Studio,Beauty,11.0
+BE10487,Harbor & Pine Studio Eye Palette,Harbor & Pine,Beauty,28.99
+BE10494,Lune Studio Everyday Candle,Lune Studio,Beauty,19.0
+BE10502,Alder Row Everyday Body Lotion,Alder Row,Beauty,34.0
+BE10507,Northline Essentials Cozy Eau de Parfum,Northline Essentials,Beauty,23.5
+BE10515,Calder Modern Gift Set,Calder,Beauty,12.5
+BE10522,Lune Studio Signature Moisturizer,Lune Studio,Beauty,60.0
+BE10526,Calder Modern Lipstick Trio,Calder,Beauty,20.99
+BE10534,Vesper Heritage Serum,Vesper,Beauty,36.0
+BE10540,Lune Studio Signature Eye Palette,Lune Studio,Beauty,42.5
+BE10549,Marlowe Studio Candle,Marlowe,Beauty,32.5
+BE10556,Vesper Everyday Body Lotion,Vesper,Beauty,24.5
+BE10566,Juniper Lane Heritage Eau de Parfum,Juniper Lane,Beauty,13.5
+BE10571,Marlowe Cozy Gift Set,Marlowe,Beauty,28.99
+BE10579,Juniper Lane Signature Moisturizer,Juniper Lane,Beauty,23.0
+BE10586,Vesper Studio Lipstick Trio,Vesper,Beauty,27.99
+BE10593,Calder Heritage Serum,Calder,Beauty,23.99
+BE10599,Vesper Cozy Eye Palette,Vesper,Beauty,12.0
+BE10604,Lune Studio Cozy Candle,Lune Studio,Beauty,28.5
+BE10612,Bramble Soft Body Lotion,Bramble,Beauty,17.0
+BE10616,Marlowe Modern Eau de Parfum,Marlowe,Beauty,10.5
+BE10623,Bramble Cozy Gift Set,Bramble,Beauty,34.5
+HB10005,Alder Row Luxe Crossbody Bag,Alder Row,Handbags,125.99
+HB10009,Marlowe Classic Leather Tote,Marlowe,Handbags,45.99
+HB10018,Field Theory Heritage Clutch,Field Theory,Handbags,192.99
+HB10023,Harbor & Pine Classic Satchel,Harbor & Pine,Handbags,83.5
+HB10028,Marlowe Cozy Belt Bag,Marlowe,Handbags,61.0
+HB10036,Lune Studio Modern Wallet,Lune Studio,Handbags,54.5
+HB10042,Marlowe Essential Backpack,Marlowe,Handbags,46.0
+HB10054,Northline Essentials Signature Shoulder Bag,Northline Essentials,Handbags,46.5
+HB10056,Harbor & Pine Cozy Crossbody Bag,Harbor & Pine,Handbags,149.99
+HB10069,Calder Cozy Leather Tote,Calder,Handbags,77.99
+HB10070,Calder Modern Clutch,Calder,Handbags,87.0
+HB10083,Field Theory Everyday Satchel,Field Theory,Handbags,38.99
+HB10088,Kestrel Classic Belt Bag,Kestrel,Handbags,205.99
+HB10091,Bramble Cozy Wallet,Bramble,Handbags,254.99
+HB10103,Ossa Luxe Backpack,Ossa,Handbags,99.5
+HB10106,Juniper Lane Luxe Shoulder Bag,Juniper Lane,Handbags,87.5
+HB10115,Field Theory Signature Crossbody Bag,Field Theory,Handbags,300.99
+HB10124,Field Theory Luxe Leather Tote,Field Theory,Handbags,63.5
+HB10131,Northline Essentials Luxe Clutch,Northline Essentials,Handbags,89.5
+HB10134,Calder Essential Satchel,Calder,Handbags,67.0
+HB10143,Vesper Soft Belt Bag,Vesper,Handbags,194.99
+HB10150,Harbor & Pine Everyday Wallet,Harbor & Pine,Handbags,65.0
+HB10158,Northline Essentials Heritage Backpack,Northline Essentials,Handbags,57.99
+HB10167,Kestrel Cozy Shoulder Bag,Kestrel,Handbags,42.0
+HB10170,Field Theory Classic Crossbody Bag,Field Theory,Handbags,122.99
+HB10180,Lune Studio Signature Leather Tote,Lune Studio,Handbags,63.99
+HB10187,Juniper Lane Cozy Clutch,Juniper Lane,Handbags,112.0
+HB10191,Field Theory Cozy Satchel,Field Theory,Handbags,63.5
+HB10201,Kestrel Cozy Belt Bag,Kestrel,Handbags,153.5
+HB10209,Bramble Soft Wallet,Bramble,Handbags,48.99
+HB10212,Lune Studio Modern Backpack,Lune Studio,Handbags,30.0
+HB10223,Bramble Everyday Shoulder Bag,Bramble,Handbags,70.5
+HB10225,Field Theory Heritage Crossbody Bag,Field Theory,Handbags,157.99
+HB10232,Marlowe Signature Leather Tote,Marlowe,Handbags,198.0
+HB10240,Marlowe Soft Clutch,Marlowe,Handbags,107.0
+HB10247,Kestrel Soft Satchel,Kestrel,Handbags,75.0
+HB10257,Field Theory Luxe Belt Bag,Field Theory,Handbags,104.0
+HB10259,Harbor & Pine Cozy Wallet,Harbor & Pine,Handbags,125.99
+HB10270,Ossa Studio Backpack,Ossa,Handbags,60.0
+HB10275,Ossa Heritage Shoulder Bag,Ossa,Handbags,98.99
+HB10283,Bramble Essential Crossbody Bag,Bramble,Handbags,114.99
+HB10293,Ossa Signature Leather Tote,Ossa,Handbags,33.99
+HB10300,Ossa Signature Clutch,Ossa,Handbags,71.0
+HB10304,Calder Everyday Satchel,Calder,Handbags,121.5
+HB10310,Northline Essentials Luxe Belt Bag,Northline Essentials,Handbags,94.99
+HB10316,Harbor & Pine Everyday Wallet,Harbor & Pine,Handbags,35.99
+HB10324,Alder Row Soft Backpack,Alder Row,Handbags,70.0
+HB10334,Marlowe Modern Shoulder Bag,Marlowe,Handbags,236.99
+HB10342,Northline Essentials Luxe Crossbody Bag,Northline Essentials,Handbags,61.99
+HB10346,Juniper Lane Cozy Leather Tote,Juniper Lane,Handbags,36.0
+HB10353,Field Theory Essential Clutch,Field Theory,Handbags,36.99
+HB10360,Field Theory Classic Satchel,Field Theory,Handbags,65.0
+HB10368,Harbor & Pine Soft Belt Bag,Harbor & Pine,Handbags,75.5
+HB10375,Alder Row Studio Wallet,Alder Row,Handbags,75.0
+HB10383,Northline Essentials Soft Backpack,Northline Essentials,Handbags,99.99
+HB10391,Ossa Classic Shoulder Bag,Ossa,Handbags,151.99
+HB10398,Lune Studio Everyday Crossbody Bag,Lune Studio,Handbags,65.99
+HB10404,Field Theory Heritage Leather Tote,Field Theory,Handbags,113.99
+HB10408,Bramble Classic Clutch,Bramble,Handbags,110.5
+HB10413,Alder Row Modern Satchel,Alder Row,Handbags,110.0
+HB10422,Kestrel Luxe Belt Bag,Kestrel,Handbags,58.0
+HB10427,Alder Row Studio Wallet,Alder Row,Handbags,91.0
+HB10434,Bramble Heritage Backpack,Bramble,Handbags,175.99
+HB10446,Lune Studio Cozy Shoulder Bag,Lune Studio,Handbags,85.99
+HB10453,Juniper Lane Cozy Crossbody Bag,Juniper Lane,Handbags,248.99
+HB10458,Marlowe Luxe Leather Tote,Marlowe,Handbags,203.5
+HB10467,Calder Heritage Clutch,Calder,Handbags,121.5
+HB10473,Kestrel Everyday Satchel,Kestrel,Handbags,52.99
+HB10480,Bramble Soft Belt Bag,Bramble,Handbags,74.0
+HB10489,Vesper Modern Wallet,Vesper,Handbags,54.5
+HB10491,Harbor & Pine Heritage Backpack,Harbor & Pine,Handbags,66.0
+HB10503,Field Theory Heritage Shoulder Bag,Field Theory,Handbags,63.99
+HB10505,Harbor & Pine Heritage Crossbody Bag,Harbor & Pine,Handbags,76.0
+HB10512,Harbor & Pine Signature Leather Tote,Harbor & Pine,Handbags,115.99
+HB10521,Bramble Soft Clutch,Bramble,Handbags,29.5
+HB10528,Juniper Lane Signature Satchel,Juniper Lane,Handbags,69.99
+HB10538,Lune Studio Everyday Belt Bag,Lune Studio,Handbags,72.99
+HB10545,Marlowe Signature Wallet,Marlowe,Handbags,137.5
+HB10547,Ossa Luxe Backpack,Ossa,Handbags,35.0
+HB10558,Juniper Lane Essential Shoulder Bag,Juniper Lane,Handbags,56.5
+HB10561,Vesper Soft Crossbody Bag,Vesper,Handbags,71.99
+HB10567,Lune Studio Modern Leather Tote,Lune Studio,Handbags,54.99
+HB10575,Calder Signature Clutch,Calder,Handbags,89.0
+HB10587,Ossa Luxe Satchel,Ossa,Handbags,154.99
+HB10591,Vesper Modern Belt Bag,Vesper,Handbags,176.99
+HB10598,Ossa Heritage Wallet,Ossa,Handbags,74.5
+HB10602,Juniper Lane Essential Backpack,Juniper Lane,Handbags,145.5
+HB10610,Vesper Signature Shoulder Bag,Vesper,Handbags,131.99
+HB10619,Juniper Lane Studio Crossbody Bag,Juniper Lane,Handbags,71.5
+HB10625,Kestrel Heritage Leather Tote,Kestrel,Handbags,83.5
+HM10006,Lune Studio Heritage Duvet Set,Lune Studio,Home,28.5
+HM10008,Juniper Lane Heritage Bath Towel Set,Juniper Lane,Home,21.99
+HM10016,Alder Row Classic Cookware Set,Alder Row,Home,27.0
+HM10021,Harbor & Pine Modern Throw Blanket,Harbor & Pine,Home,28.5
+HM10029,Vesper Signature Dinnerware Set,Vesper,Home,20.0
+HM10035,Harbor & Pine Luxe Pillow Pair,Harbor & Pine,Home,77.99
+HM10046,Ossa Luxe Coffee Maker,Ossa,Home,71.5
+HM10050,Vesper Soft Vase,Vesper,Home,52.5
+HM10061,Bramble Studio Duvet Set,Bramble,Home,46.0
+HM10068,Vesper Soft Bath Towel Set,Vesper,Home,146.99
+HM10073,Alder Row Soft Cookware Set,Alder Row,Home,51.0
+HM10081,Lune Studio Essential Throw Blanket,Lune Studio,Home,51.0
+HM10089,Field Theory Heritage Dinnerware Set,Field Theory,Home,29.5
+HM10095,Vesper Everyday Pillow Pair,Vesper,Home,123.5
+HM10103,Kestrel Cozy Coffee Maker,Kestrel,Home,15.5
+HM10107,Bramble Studio Vase,Bramble,Home,97.99
+HM10113,Bramble Heritage Duvet Set,Bramble,Home,96.99
+HM10125,Juniper Lane Signature Bath Towel Set,Juniper Lane,Home,59.0
+HM10129,Harbor & Pine Soft Cookware Set,Harbor & Pine,Home,28.0
+HM10134,Alder Row Cozy Throw Blanket,Alder Row,Home,34.5
+HM10141,Kestrel Cozy Dinnerware Set,Kestrel,Home,22.99
+HM10149,Vesper Luxe Pillow Pair,Vesper,Home,70.5
+HM10157,Alder Row Luxe Coffee Maker,Alder Row,Home,42.99
+HM10162,Juniper Lane Cozy Vase,Juniper Lane,Home,61.0
+HM10174,Field Theory Everyday Duvet Set,Field Theory,Home,46.99
+HM10177,Northline Essentials Studio Bath Towel Set,Northline Essentials,Home,90.0
+HM10187,Marlowe Luxe Cookware Set,Marlowe,Home,8.0
+HM10192,Northline Essentials Everyday Throw Blanket,Northline Essentials,Home,74.0
+HM10196,Northline Essentials Classic Dinnerware Set,Northline Essentials,Home,50.0
+HM10206,Calder Heritage Pillow Pair,Calder,Home,87.99
+HM10216,Alder Row Luxe Coffee Maker,Alder Row,Home,34.99
+HM10221,Kestrel Everyday Vase,Kestrel,Home,123.99
+HM10227,Field Theory Luxe Duvet Set,Field Theory,Home,140.99
+HM10232,Harbor & Pine Soft Bath Towel Set,Harbor & Pine,Home,36.5
+HM10239,Lune Studio Cozy Cookware Set,Lune Studio,Home,18.0
+HM10249,Ossa Classic Throw Blanket,Ossa,Home,68.0
+HM10253,Lune Studio Signature Dinnerware Set,Lune Studio,Home,38.0
+HM10263,Kestrel Luxe Pillow Pair,Kestrel,Home,66.99
+HM10269,Juniper Lane Signature Coffee Maker,Juniper Lane,Home,64.99
+HM10274,Harbor & Pine Classic Vase,Harbor & Pine,Home,17.5
+HM10283,Field Theory Essential Duvet Set,Field Theory,Home,24.99
+HM10287,Field Theory Modern Bath Towel Set,Field Theory,Home,24.99
+HM10297,Northline Essentials Signature Cookware Set,Northline Essentials,Home,35.5
+HM10305,Northline Essentials Essential Throw Blanket,Northline Essentials,Home,25.5
+HM10309,Kestrel Studio Dinnerware Set,Kestrel,Home,63.0
+HM10315,Field Theory Cozy Pillow Pair,Field Theory,Home,34.99
+HM10327,Kestrel Modern Coffee Maker,Kestrel,Home,26.5
+HM10330,Juniper Lane Luxe Vase,Juniper Lane,Home,44.99
+HM10336,Lune Studio Heritage Duvet Set,Lune Studio,Home,45.0
+HM10343,Vesper Signature Bath Towel Set,Vesper,Home,274.99
+HM10356,Alder Row Modern Cookware Set,Alder Row,Home,52.0
+HM10361,Bramble Studio Throw Blanket,Bramble,Home,40.99
+HM10369,Alder Row Heritage Dinnerware Set,Alder Row,Home,73.99
+HM10372,Bramble Cozy Pillow Pair,Bramble,Home,40.99
+HM10380,Lune Studio Luxe Coffee Maker,Lune Studio,Home,19.5
+HM10391,Marlowe Cozy Vase,Marlowe,Home,19.5
+HM10392,Harbor & Pine Studio Duvet Set,Harbor & Pine,Home,46.99
+HM10402,Ossa Soft Bath Towel Set,Ossa,Home,47.5
+HM10408,Marlowe Heritage Cookware Set,Marlowe,Home,82.5
+HM10417,Bramble Heritage Throw Blanket,Bramble,Home,30.5
+HM10423,Bramble Luxe Dinnerware Set,Bramble,Home,44.5
+HM10427,Harbor & Pine Classic Pillow Pair,Harbor & Pine,Home,23.0
+HM10438,Kestrel Everyday Coffee Maker,Kestrel,Home,14.0
+HM10441,Juniper Lane Classic Vase,Juniper Lane,Home,24.99
+HM10454,Ossa Luxe Duvet Set,Ossa,Home,104.0
+HM10458,Ossa Signature Bath Towel Set,Ossa,Home,62.0
+HM10462,Field Theory Classic Cookware Set,Field Theory,Home,18.99
+HM10471,Calder Luxe Throw Blanket,Calder,Home,114.0
+HM10482,Ossa Heritage Dinnerware Set,Ossa,Home,30.5
+HM10485,Ossa Cozy Pillow Pair,Ossa,Home,50.0
+HM10492,Juniper Lane Cozy Coffee Maker,Juniper Lane,Home,21.5
+HM10499,Ossa Heritage Vase,Ossa,Home,9.0
+HM10504,Marlowe Classic Duvet Set,Marlowe,Home,67.99
+HM10516,Lune Studio Signature Bath Towel Set,Lune Studio,Home,60.5
+HM10522,Field Theory Studio Cookware Set,Field Theory,Home,68.5
+HM10529,Marlowe Heritage Throw Blanket,Marlowe,Home,22.99
+HM10538,Field Theory Classic Dinnerware Set,Field Theory,Home,42.5
+HM10539,Northline Essentials Classic Pillow Pair,Northline Essentials,Home,21.99
+HM10548,Lune Studio Everyday Coffee Maker,Lune Studio,Home,48.5
+HM10556,Harbor & Pine Studio Vase,Harbor & Pine,Home,9.99
+HM10561,Northline Essentials Signature Duvet Set,Northline Essentials,Home,8.99
+HM10573,Lune Studio Luxe Bath Towel Set,Lune Studio,Home,34.5
+HM10580,Northline Essentials Modern Cookware Set,Northline Essentials,Home,26.99
+HM10586,Lune Studio Signature Throw Blanket,Lune Studio,Home,35.5
+HM10589,Juniper Lane Modern Dinnerware Set,Juniper Lane,Home,25.5
+HM10600,Marlowe Studio Pillow Pair,Marlowe,Home,43.5
+HM10605,Field Theory Studio Coffee Maker,Field Theory,Home,51.99
+HM10612,Northline Essentials Everyday Vase,Northline Essentials,Home,157.5
+HM10616,Harbor & Pine Essential Duvet Set,Harbor & Pine,Home,76.0
+HM10629,Field Theory Modern Bath Towel Set,Field Theory,Home,67.5
+KD10004,Harbor & Pine Cozy Pajama Set,Harbor & Pine,Kids,33.0
+KD10010,Marlowe Luxe Plush Toy,Marlowe,Kids,30.0
+KD10017,Juniper Lane Luxe Puffer Jacket,Juniper Lane,Kids,21.5
+KD10027,Lune Studio Classic Building Set,Lune Studio,Kids,48.5
+KD10033,Harbor & Pine Classic Hoodie,Harbor & Pine,Kids,26.99
+KD10041,Field Theory Luxe Sneakers,Field Theory,Kids,56.99
+KD10046,Calder Everyday Board Game,Calder,Kids,11.0
+KD10053,Bramble Heritage Snowsuit,Bramble,Kids,17.5
+KD10057,Northline Essentials Soft Pajama Set,Northline Essentials,Kids,36.0
+KD10064,Northline Essentials Studio Plush Toy,Northline Essentials,Kids,20.5
+KD10074,Calder Cozy Puffer Jacket,Calder,Kids,22.5
+KD10080,Calder Classic Building Set,Calder,Kids,29.0
+KD10084,Lune Studio Luxe Hoodie,Lune Studio,Kids,30.5
+KD10091,Kestrel Studio Sneakers,Kestrel,Kids,27.5
+KD10098,Vesper Heritage Board Game,Vesper,Kids,48.0
+KD10109,Calder Classic Snowsuit,Calder,Kids,58.5
+KD10118,Kestrel Luxe Pajama Set,Kestrel,Kids,24.5
+KD10125,Marlowe Soft Plush Toy,Marlowe,Kids,14.0
+KD10129,Northline Essentials Studio Puffer Jacket,Northline Essentials,Kids,21.0
+KD10137,Bramble Essential Building Set,Bramble,Kids,30.5
+KD10140,Calder Signature Hoodie,Calder,Kids,37.0
+KD10147,Marlowe Essential Sneakers,Marlowe,Kids,18.99
+KD10155,Northline Essentials Signature Board Game,Northline Essentials,Kids,15.0
+KD10165,Vesper Essential Snowsuit,Vesper,Kids,11.5
+KD10170,Kestrel Cozy Pajama Set,Kestrel,Kids,28.99
+KD10179,Marlowe Signature Plush Toy,Marlowe,Kids,34.99
+KD10188,Marlowe Luxe Puffer Jacket,Marlowe,Kids,42.99
+KD10194,Calder Signature Building Set,Calder,Kids,14.99
+KD10196,Marlowe Luxe Hoodie,Marlowe,Kids,11.99
+KD10205,Juniper Lane Studio Sneakers,Juniper Lane,Kids,18.99
+KD10216,Field Theory Luxe Board Game,Field Theory,Kids,29.0
+KD10218,Ossa Signature Snowsuit,Ossa,Kids,34.0
+KD10227,Kestrel Cozy Pajama Set,Kestrel,Kids,11.0
+KD10234,Alder Row Studio Plush Toy,Alder Row,Kids,20.5
+KD10238,Harbor & Pine Classic Puffer Jacket,Harbor & Pine,Kids,18.0
+KD10251,Bramble Everyday Building Set,Bramble,Kids,22.5
+KD10253,Ossa Studio Hoodie,Ossa,Kids,31.0
+KD10260,Northline Essentials Everyday Sneakers,Northline Essentials,Kids,11.99
+KD10272,Juniper Lane Luxe Board Game,Juniper Lane,Kids,20.99
+KD10277,Juniper Lane Luxe Snowsuit,Juniper Lane,Kids,44.0
+KD10282,Ossa Heritage Pajama Set,Ossa,Kids,11.99
+KD10290,Marlowe Heritage Plush Toy,Marlowe,Kids,29.0
+KD10294,Alder Row Essential Puffer Jacket,Alder Row,Kids,45.99
+KD10307,Lune Studio Everyday Building Set,Lune Studio,Kids,31.0
+KD10310,Calder Studio Hoodie,Calder,Kids,16.0
+KD10319,Lune Studio Classic Sneakers,Lune Studio,Kids,19.0
+KD10324,Marlowe Soft Board Game,Marlowe,Kids,17.5
+KD10330,Juniper Lane Modern Snowsuit,Juniper Lane,Kids,24.5
+KD10339,Kestrel Soft Pajama Set,Kestrel,Kids,24.99
+KD10348,Field Theory Studio Plush Toy,Field Theory,Kids,28.5
+KD10354,Harbor & Pine Luxe Puffer Jacket,Harbor & Pine,Kids,22.99
+KD10357,Ossa Cozy Building Set,Ossa,Kids,23.0
+KD10368,Bramble Cozy Hoodie,Bramble,Kids,12.0
+KD10376,Vesper Studio Sneakers,Vesper,Kids,31.0
+KD10378,Bramble Soft Board Game,Bramble,Kids,20.99
+KD10390,Calder Cozy Snowsuit,Calder,Kids,30.5
+KD10393,Northline Essentials Cozy Pajama Set,Northline Essentials,Kids,18.0
+KD10402,Lune Studio Cozy Plush Toy,Lune Studio,Kids,35.5
+KD10407,Alder Row Modern Puffer Jacket,Alder Row,Kids,28.5
+KD10415,Field Theory Everyday Building Set,Field Theory,Kids,27.5
+KD10421,Calder Heritage Hoodie,Calder,Kids,17.5
+KD10432,Calder Studio Sneakers,Calder,Kids,16.5
+KD10434,Kestrel Cozy Board Game,Kestrel,Kids,32.99
+KD10444,Ossa Signature Snowsuit,Ossa,Kids,19.0
+KD10452,Vesper Studio Pajama Set,Vesper,Kids,35.5
+KD10460,Alder Row Soft Plush Toy,Alder Row,Kids,18.99
+KD10465,Northline Essentials Essential Puffer Jacket,Northline Essentials,Kids,33.5
+KD10473,Bramble Soft Building Set,Bramble,Kids,24.0
+KD10480,Lune Studio Signature Hoodie,Lune Studio,Kids,33.99
+KD10489,Northline Essentials Studio Sneakers,Northline Essentials,Kids,14.99
+KD10493,Lune Studio Classic Board Game,Lune Studio,Kids,9.0
+KD10502,Juniper Lane Studio Snowsuit,Juniper Lane,Kids,29.99
+KD10510,Ossa Essential Pajama Set,Ossa,Kids,15.0
+KD10513,Juniper Lane Cozy Plush Toy,Juniper Lane,Kids,29.99
+KD10523,Calder Everyday Puffer Jacket,Calder,Kids,26.99
+KD10530,Kestrel Heritage Building Set,Kestrel,Kids,28.0
+KD10532,Marlowe Cozy Hoodie,Marlowe,Kids,21.99
+KD10541,Harbor & Pine Heritage Sneakers,Harbor & Pine,Kids,43.5
+KD10550,Lune Studio Studio Board Game,Lune Studio,Kids,24.0
+KD10557,Calder Everyday Snowsuit,Calder,Kids,10.99
+KD10560,Kestrel Essential Pajama Set,Kestrel,Kids,35.0
+KD10571,Kestrel Soft Plush Toy,Kestrel,Kids,11.5
+KD10578,Harbor & Pine Soft Puffer Jacket,Harbor & Pine,Kids,11.99
+KD10584,Northline Essentials Studio Building Set,Northline Essentials,Kids,20.0
+KD10589,Lune Studio Studio Hoodie,Lune Studio,Kids,32.0
+KD10597,Northline Essentials Luxe Sneakers,Northline Essentials,Kids,31.99
+KD10604,Alder Row Essential Board Game,Alder Row,Kids,30.5
+KD10613,Lune Studio Modern Snowsuit,Lune Studio,Kids,38.5
+KD10620,Juniper Lane Essential Pajama Set,Juniper Lane,Kids,15.0
+KD10629,Field Theory Soft Plush Toy,Field Theory,Kids,19.99
+JW10001,Juniper Lane Luxe Stud Earrings,Juniper Lane,Jewelry,145.5
+JW10013,Marlowe Everyday Pendant Necklace,Marlowe,Jewelry,48.99
+JW10018,Harbor & Pine Signature Bangle,Harbor & Pine,Jewelry,543.5
+JW10023,Calder Signature Watch,Calder,Jewelry,21.0
+JW10028,Harbor & Pine Cozy Hoop Earrings,Harbor & Pine,Jewelry,147.99
+JW10040,Calder Cozy Tennis Bracelet,Calder,Jewelry,31.99
+JW10043,Juniper Lane Heritage Ring,Juniper Lane,Jewelry,95.0
+JW10049,Northline Essentials Studio Charm Bracelet,Northline Essentials,Jewelry,17.5
+JW10060,Bramble Everyday Stud Earrings,Bramble,Jewelry,10.0
+JW10063,Harbor & Pine Heritage Pendant Necklace,Harbor & Pine,Jewelry,72.5
+JW10076,Harbor & Pine Cozy Bangle,Harbor & Pine,Jewelry,136.5
+JW10082,Calder Soft Watch,Calder,Jewelry,134.99
+JW10089,Kestrel Heritage Hoop Earrings,Kestrel,Jewelry,170.5
+JW10097,Lune Studio Cozy Tennis Bracelet,Lune Studio,Jewelry,43.99
+JW10100,Juniper Lane Luxe Ring,Juniper Lane,Jewelry,50.0
+JW10106,Marlowe Luxe Charm Bracelet,Marlowe,Jewelry,96.0
+JW10116,Kestrel Luxe Stud Earrings,Kestrel,Jewelry,167.0
+JW10124,Ossa Heritage Pendant Necklace,Ossa,Jewelry,18.99
+JW10132,Lune Studio Heritage Bangle,Lune Studio,Jewelry,71.0
+JW10135,Bramble Signature Watch,Bramble,Jewelry,126.5
+JW10140,Alder Row Everyday Hoop Earrings,Alder Row,Jewelry,133.0
+JW10150,Northline Essentials Cozy Tennis Bracelet,Northline Essentials,Jewelry,68.5
+JW10160,Northline Essentials Studio Ring,Northline Essentials,Jewelry,35.5
+JW10162,Lune Studio Studio Charm Bracelet,Lune Studio,Jewelry,115.99
+JW10174,Ossa Everyday Stud Earrings,Ossa,Jewelry,125.5
+JW10179,Northline Essentials Essential Pendant Necklace,Northline Essentials,Jewelry,103.5
+JW10188,Lune Studio Cozy Bangle,Lune Studio,Jewelry,18.0
+JW10194,Bramble Everyday Watch,Bramble,Jewelry,78.99
+JW10196,Ossa Luxe Hoop Earrings,Ossa,Jewelry,48.5
+JW10207,Kestrel Modern Tennis Bracelet,Kestrel,Jewelry,41.99
+JW10214,Vesper Cozy Ring,Vesper,Jewelry,83.99
+JW10220,Field Theory Modern Charm Bracelet,Field Theory,Jewelry,147.5
+JW10227,Alder Row Signature Stud Earrings,Alder Row,Jewelry,83.5
+JW10236,Alder Row Essential Pendant Necklace,Alder Row,Jewelry,176.5
+JW10242,Harbor & Pine Classic Bangle,Harbor & Pine,Jewelry,41.5
+JW10248,Juniper Lane Modern Watch,Juniper Lane,Jewelry,98.99
+JW10255,Ossa Luxe Hoop Earrings,Ossa,Jewelry,114.99
+JW10260,Ossa Heritage Tennis Bracelet,Ossa,Jewelry,85.0
+JW10266,Juniper Lane Signature Ring,Juniper Lane,Jewelry,27.99
+JW10275,Lune Studio Cozy Charm Bracelet,Lune Studio,Jewelry,69.0
+JW10281,Northline Essentials Cozy Stud Earrings,Northline Essentials,Jewelry,110.0
+JW10289,Vesper Soft Pendant Necklace,Vesper,Jewelry,36.99
+JW10297,Marlowe Luxe Bangle,Marlowe,Jewelry,16.99
+JW10305,Northline Essentials Classic Watch,Northline Essentials,Jewelry,47.0
+JW10314,Marlowe Soft Hoop Earrings,Marlowe,Jewelry,133.0
+JW10320,Harbor & Pine Soft Tennis Bracelet,Harbor & Pine,Jewelry,128.99
+JW10323,Lune Studio Signature Ring,Lune Studio,Jewelry,36.5
+JW10332,Bramble Soft Charm Bracelet,Bramble,Jewelry,85.99
+JW10340,Northline Essentials Signature Stud Earrings,Northline Essentials,Jewelry,244.5
+JW10345,Kestrel Cozy Pendant Necklace,Kestrel,Jewelry,37.0
+JW10351,Bramble Modern Bangle,Bramble,Jewelry,54.99
+JW10357,Vesper Essential Watch,Vesper,Jewelry,98.5
+JW10365,Juniper Lane Luxe Hoop Earrings,Juniper Lane,Jewelry,56.5
+JW10371,Calder Soft Tennis Bracelet,Calder,Jewelry,107.0
+JW10381,Vesper Cozy Ring,Vesper,Jewelry,31.5
+JW10388,Marlowe Cozy Charm Bracelet,Marlowe,Jewelry,130.5
+JW10395,Kestrel Essential Stud Earrings,Kestrel,Jewelry,58.99
+JW10405,Northline Essentials Heritage Pendant Necklace,Northline Essentials,Jewelry,79.0
+JW10408,Calder Luxe Bangle,Calder,Jewelry,167.0
+JW10415,Vesper Modern Watch,Vesper,Jewelry,93.5
+JW10421,Alder Row Studio Hoop Earrings,Alder Row,Jewelry,42.0
+JW10427,Lune Studio Signature Tennis Bracelet,Lune Studio,Jewelry,293.99
+JW10437,Vesper Modern Ring,Vesper,Jewelry,28.0
+JW10445,Bramble Cozy Charm Bracelet,Bramble,Jewelry,130.5
+JW10451,Bramble Luxe Stud Earrings,Bramble,Jewelry,79.0
+JW10456,Marlowe Signature Pendant Necklace,Marlowe,Jewelry,85.99
+JW10465,Alder Row Luxe Bangle,Alder Row,Jewelry,94.99
+JW10474,Bramble Soft Watch,Bramble,Jewelry,83.99
+JW10478,Bramble Luxe Hoop Earrings,Bramble,Jewelry,112.0
+JW10486,Calder Luxe Tennis Bracelet,Calder,Jewelry,88.5
+JW10494,Ossa Essential Ring,Ossa,Jewelry,48.5
+JW10498,Lune Studio Everyday Charm Bracelet,Lune Studio,Jewelry,86.0
+JW10504,Ossa Luxe Stud Earrings,Ossa,Jewelry,104.0
+JW10514,Juniper Lane Luxe Pendant Necklace,Juniper Lane,Jewelry,19.99
+JW10523,Field Theory Essential Bangle,Field Theory,Jewelry,773.5
+JW10526,Alder Row Modern Watch,Alder Row,Jewelry,18.99
+JW10535,Alder Row Luxe Hoop Earrings,Alder Row,Jewelry,85.5
+JW10544,Field Theory Studio Tennis Bracelet,Field Theory,Jewelry,43.99
+JW10548,Juniper Lane Modern Ring,Juniper Lane,Jewelry,182.0
+JW10553,Marlowe Studio Charm Bracelet,Marlowe,Jewelry,199.99
+JW10560,Field Theory Heritage Stud Earrings,Field Theory,Jewelry,118.5
+JW10572,Juniper Lane Signature Pendant Necklace,Juniper Lane,Jewelry,96.0
+JW10574,Kestrel Everyday Bangle,Kestrel,Jewelry,35.5
+JW10584,Juniper Lane Modern Watch,Juniper Lane,Jewelry,40.5
+JW10589,Northline Essentials Heritage Hoop Earrings,Northline Essentials,Jewelry,62.99
+JW10597,Marlowe Luxe Tennis Bracelet,Marlowe,Jewelry,50.99
+JW10605,Calder Everyday Ring,Calder,Jewelry,174.5
+JW10612,Ossa Heritage Charm Bracelet,Ossa,Jewelry,38.0
+JW10617,Lune Studio Studio Stud Earrings,Lune Studio,Jewelry,42.99
+JW10629,Marlowe Heritage Pendant Necklace,Marlowe,Jewelry,89.0
