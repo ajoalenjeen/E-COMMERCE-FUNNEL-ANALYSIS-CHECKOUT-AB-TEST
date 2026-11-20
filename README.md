@@ -58,12 +58,12 @@ Only 3.5% of Q4 visits ended in a purchase. Every checkout step performed the sa
 
 ### Funnel Insights:
 
-<img src="https://github.com/ajoalenjeen/E-commerce-Funnel-Analysis-Checkout-A-B-Test/blob/39c9b510b25342c3d07b663587e6fb63da2b4cbb/Pictures/Screenshot%202026-11-19%20131828.png" 
+<img src="https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/acc4c5386fdc5e10886f1144bd22607eb217e3df/Pictures/Screenshot%202026-11-19%20131828.png" 
      alt="Top 20 Cities" 
      width="1000">
 * Out of every 100 visits, 63 view a product, 8 add to cart, 5 start checkout and 3.5 purchase. The biggest drop (view → cart, 12%) is normal browsing behavior.
   
-<img src="https://github.com/ajoalenjeen/E-commerce-Funnel-Analysis-Checkout-A-B-Test/blob/554158b5cd19f610ee53d95fc6c666dedf4f4f35/Pictures/Screenshot%202026-11-19%20132027.png" 
+<img src="https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/acc4c5386fdc5e10886f1144bd22607eb217e3df/Pictures/Screenshot%202026-11-19%20132027.png" 
      alt="Top 20 Cities" 
      width="1000">
      
@@ -73,7 +73,7 @@ Only 3.5% of Q4 visits ended in a purchase. Every checkout step performed the sa
 
 * 1 in 5 buyers purchased on a later visit than when they first added to cart, so user-level conversion (5.2%) is higher than session-level (3.5%).
 
-  <img src="https://github.com/ajoalenjeen/E-commerce-Funnel-Analysis-Checkout-A-B-Test/blob/554158b5cd19f610ee53d95fc6c666dedf4f4f35/Pictures/Screenshot%202026-11-19%20132123.png" 
+  <img src="https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/acc4c5386fdc5e10886f1144bd22607eb217e3df/Pictures/Screenshot%202026-11-19%20132123.png" 
      alt="Top 20 Cities" 
      width="1000">
 
@@ -84,7 +84,7 @@ Only 3.5% of Q4 visits ended in a purchase. Every checkout step performed the sa
 
 ### Opportunity Sizing:
 
-  <img src="https://github.com/ajoalenjeen/E-commerce-Funnel-Analysis-Checkout-A-B-Test/blob/791df21c2b763593170d6c4b3558b6d0d9d96fb2/Pictures/Screenshot%202026-11-19%20134432.png" 
+  <img src="https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/acc4c5386fdc5e10886f1144bd22607eb217e3df/Pictures/Screenshot%202026-11-19%20134432.png" 
      alt="Top 20 Cities" 
      width="1000">
 
@@ -94,7 +94,7 @@ Only 3.5% of Q4 visits ended in a purchase. Every checkout step performed the sa
 
 ### A/B Test Insights (checkout_v2, Nov 3 – Dec 21, 12,249 users):
 
-  <img src="https://github.com/ajoalenjeen/E-commerce-Funnel-Analysis-Checkout-A-B-Test/blob/791df21c2b763593170d6c4b3558b6d0d9d96fb2/Pictures/Screenshot%202026-11-19%20134320.png" 
+  <img src="https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/acc4c5386fdc5e10886f1144bd22607eb217e3df/Pictures/Screenshot%202026-11-19%20134320.png" 
      alt="Top 20 Cities" 
      width="1000">
 
@@ -106,7 +106,7 @@ Only 3.5% of Q4 visits ended in a purchase. Every checkout step performed the sa
 
 * Revenue per exposed user was flat: $93.58 vs. $94.26 (+0.7%, p = 0.74).
 
-    <img src="https://github.com/ajoalenjeen/E-commerce-Funnel-Analysis-Checkout-A-B-Test/blob/791df21c2b763593170d6c4b3558b6d0d9d96fb2/Pictures/Screenshot%202026-11-19%20134338.png" 
+    <img src="https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/acc4c5386fdc5e10886f1144bd22607eb217e3df/Pictures/Screenshot%202026-11-19%20134338.png" 
      alt="Top 20 Cities" 
      width="1000">
 
