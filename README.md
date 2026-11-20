@@ -1,5 +1,5 @@
 # E-COMMERCE FUNNEL ANALYSIS & CHECKOUT A/B TEST
-The interactive A/B test results can be seen [here](https://ajoalenjeen.github.io/ecommerce-funnel-ab-testing/ab_test_explorer.html)
+
 # Project Overview
 
 Northline is a US department store selling apparel, shoes, beauty, home and accessories online. During the 2025 holiday quarter, its website drew 380K+ visits, but only 3.5% ended in a purchase, and mobile shoppers converted far worse than desktop.
