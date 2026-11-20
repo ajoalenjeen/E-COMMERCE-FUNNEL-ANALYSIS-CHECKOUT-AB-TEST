@@ -46,8 +46,6 @@ The Python notebook for A/B Test Analysis [here](https://github.com/ajoalenjeen/
 
 # Overview of Findings:
 
-Only 3.5% of Q4 visits ended in a purchase. Every checkout step performed the same on mobile and desktop except one: the shipping step, where mobile shoppers dropped out 11 points more often. The cause was a surprise $10.95 shipping fee on carts under $49, which cost an estimated $62K in the quarter. A redesigned checkout with a free-shipping progress bar raised conversion, especially on mobile, but smaller orders and an Apple Pay bug left revenue per user flat, so it is not ready to launch.
-
 ### Data Quality Insights:
 
 * Removed 30 bot accounts generating ~202K fake events (6% of all events): desktop-only, active at 2–5 am, ~1 second per page and zero add-to-carts.
@@ -62,7 +60,8 @@ Only 3.5% of Q4 visits ended in a purchase. Every checkout step performed the sa
      alt="Top 20 Cities" 
      width="1000">
 * Out of every 100 visits, 63 view a product, 8 add to cart, 5 start checkout and 3.5 purchase. The biggest drop (view → cart, 12%) is normal browsing behavior.
-  
+
+  #### Conversion by Segment [Link](https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/f15582afda8317b74833c8bb5ac090d7c6aa7ede/Dashboard/ab_test_explorer.html):
 <img src="https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/acc4c5386fdc5e10886f1144bd22607eb217e3df/Pictures/Screenshot%202026-11-19%20132027.png" 
      alt="Top 20 Cities" 
      width="1000">
