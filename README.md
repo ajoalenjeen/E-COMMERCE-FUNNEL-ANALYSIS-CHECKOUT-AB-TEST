@@ -30,6 +30,9 @@ The Python notebook for Opportunity Sizing [here](https://github.com/ajoalenjeen
 
 The Python notebook for A/B Test Analysis [here](https://github.com/ajoalenjeen/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/blob/30926ce5c1fdf52386fbd1d034f3017f78fbc327/Notebook/ab_testing.ipynb)
 
+An interactive A/B test dashboard can be seen [here](https://ajoalenjeen.github.io/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/Dashboard/ab_test_explorer.html)
+
+An interactive funnel step explorer can be seen [here](https://ajoalenjeen.github.io/E-COMMERCE-FUNNEL-ANALYSIS-CHECKOUT-AB-TEST/Dashboard/segment_explorer.html)
 
 ## Data Structure:
 
